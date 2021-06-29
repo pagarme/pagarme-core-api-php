@@ -36,17 +36,37 @@ class GetBalanceResponse implements JsonSerializable
     public $recipient;
 
     /**
+     * @todo Write general description for this property
+     * @required
+     * @maps transferred_amount
+     * @var integer $transferredAmount public property
+     */
+    public $transferredAmount;
+
+    /**
+     * @todo Write general description for this property
+     * @required
+     * @maps waiting_funds_amount
+     * @var integer $waitingFundsAmount public property
+     */
+    public $waitingFundsAmount;
+
+    /**
      * Constructor to set initial or default values of member properties
-     * @param string               $currency        Initialization value for $this->currency
-     * @param integer              $availableAmount Initialization value for $this->availableAmount
-     * @param GetRecipientResponse $recipient       Initialization value for $this->recipient
+     * @param string               $currency           Initialization value for $this->currency
+     * @param integer              $availableAmount    Initialization value for $this->availableAmount
+     * @param GetRecipientResponse $recipient          Initialization value for $this->recipient
+     * @param integer              $transferredAmount  Initialization value for $this->transferredAmount
+     * @param integer              $waitingFundsAmount Initialization value for $this->waitingFundsAmount
      */
     public function __construct()
     {
-        if (3 == func_num_args()) {
-            $this->currency        = func_get_arg(0);
-            $this->availableAmount = func_get_arg(1);
-            $this->recipient       = func_get_arg(2);
+        if (5 == func_num_args()) {
+            $this->currency           = func_get_arg(0);
+            $this->availableAmount    = func_get_arg(1);
+            $this->recipient          = func_get_arg(2);
+            $this->transferredAmount  = func_get_arg(3);
+            $this->waitingFundsAmount = func_get_arg(4);
         }
     }
 
@@ -57,9 +77,11 @@ class GetBalanceResponse implements JsonSerializable
     public function jsonSerialize()
     {
         $json = array();
-        $json['currency']         = $this->currency;
-        $json['available_amount'] = $this->availableAmount;
-        $json['recipient']        = $this->recipient;
+        $json['currency']             = $this->currency;
+        $json['available_amount']     = $this->availableAmount;
+        $json['recipient']            = $this->recipient;
+        $json['transferred_amount']   = $this->transferredAmount;
+        $json['waiting_funds_amount'] = $this->waitingFundsAmount;
 
         return $json;
     }

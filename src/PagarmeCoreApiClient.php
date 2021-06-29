@@ -25,6 +25,14 @@ class PagarmeCoreApiClient
         Configuration::$basicAuthPassword = $basicAuthPassword ? $basicAuthPassword : Configuration::$basicAuthPassword;
     }
     /**
+     * Singleton access to Plans controller
+     * @return Controllers\PlansController The *Singleton* instance
+     */
+    public function getPlans()
+    {
+        return Controllers\PlansController::getInstance();
+    }
+    /**
      * Singleton access to Subscriptions controller
      * @return Controllers\SubscriptionsController The *Singleton* instance
      */
@@ -39,14 +47,6 @@ class PagarmeCoreApiClient
     public function getOrders()
     {
         return Controllers\OrdersController::getInstance();
-    }
-    /**
-     * Singleton access to Plans controller
-     * @return Controllers\PlansController The *Singleton* instance
-     */
-    public function getPlans()
-    {
-        return Controllers\PlansController::getInstance();
     }
     /**
      * Singleton access to Invoices controller
@@ -71,6 +71,14 @@ class PagarmeCoreApiClient
     public function getCharges()
     {
         return Controllers\ChargesController::getInstance();
+    }
+    /**
+     * Singleton access to Transfers controller
+     * @return Controllers\TransfersController The *Singleton* instance
+     */
+    public function getTransfers()
+    {
+        return Controllers\TransfersController::getInstance();
     }
     /**
      * Singleton access to Recipients controller
@@ -103,13 +111,5 @@ class PagarmeCoreApiClient
     public function getTransactions()
     {
         return Controllers\TransactionsController::getInstance();
-    }
-    /**
-     * Singleton access to Transfers controller
-     * @return Controllers\TransfersController The *Singleton* instance
-     */
-    public function getTransfers()
-    {
-        return Controllers\TransfersController::getInstance();
     }
 }

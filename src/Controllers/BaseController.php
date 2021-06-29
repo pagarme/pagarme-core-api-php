@@ -58,14 +58,14 @@ class BaseController
     {
         $mapper = new JsonMapper();
         $mapper->arChildClasses['PagarmeCoreApiLib\\Models\\GetTransactionResponse'] = array(
-            'PagarmeCoreApiLib\\Models\\GetVoucherTransactionResponse',
             'PagarmeCoreApiLib\\Models\\GetBankTransferTransactionResponse',
             'PagarmeCoreApiLib\\Models\\GetSafetyPayTransactionResponse',
+            'PagarmeCoreApiLib\\Models\\GetVoucherTransactionResponse',
             'PagarmeCoreApiLib\\Models\\GetBoletoTransactionResponse',
             'PagarmeCoreApiLib\\Models\\GetDebitCardTransactionResponse',
+            'PagarmeCoreApiLib\\Models\\GetPrivateLabelTransactionResponse',
             'PagarmeCoreApiLib\\Models\\GetCashTransactionResponse',
             'PagarmeCoreApiLib\\Models\\GetCreditCardTransactionResponse',
-            'PagarmeCoreApiLib\\Models\\GetPrivateLabelTransactionResponse',
             'PagarmeCoreApiLib\\Models\\GetPixTransactionResponse'
         );
         return $mapper;
