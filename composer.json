@@ -1,8 +1,8 @@
 {
-    "name": "pagarme/pagarmecoreapi",
+    "name": "pagarme/pagarme-php",
     "type": "library",
     "description": "Pagarme API",
-    "keywords": ["Pagarme.Core.Api","API","SDK"],
+    "keywords": ["PagarmeCoreApi","API","SDK"],
     "homepage": "https://apimatic.io",
     "license": "MIT",
     "authors": [

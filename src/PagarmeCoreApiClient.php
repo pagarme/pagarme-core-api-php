@@ -25,28 +25,20 @@ class PagarmeCoreApiClient
         Configuration::$basicAuthPassword = $basicAuthPassword ? $basicAuthPassword : Configuration::$basicAuthPassword;
     }
     /**
-     * Singleton access to Subscriptions controller
-     * @return Controllers\SubscriptionsController The *Singleton* instance
-     */
-    public function getSubscriptions()
-    {
-        return Controllers\SubscriptionsController::getInstance();
-    }
-    /**
-     * Singleton access to Orders controller
-     * @return Controllers\OrdersController The *Singleton* instance
-     */
-    public function getOrders()
-    {
-        return Controllers\OrdersController::getInstance();
-    }
-    /**
      * Singleton access to Plans controller
      * @return Controllers\PlansController The *Singleton* instance
      */
     public function getPlans()
     {
         return Controllers\PlansController::getInstance();
+    }
+    /**
+     * Singleton access to Subscriptions controller
+     * @return Controllers\SubscriptionsController The *Singleton* instance
+     */
+    public function getSubscriptions()
+    {
+        return Controllers\SubscriptionsController::getInstance();
     }
     /**
      * Singleton access to Invoices controller
@@ -57,12 +49,28 @@ class PagarmeCoreApiClient
         return Controllers\InvoicesController::getInstance();
     }
     /**
+     * Singleton access to Orders controller
+     * @return Controllers\OrdersController The *Singleton* instance
+     */
+    public function getOrders()
+    {
+        return Controllers\OrdersController::getInstance();
+    }
+    /**
      * Singleton access to Customers controller
      * @return Controllers\CustomersController The *Singleton* instance
      */
     public function getCustomers()
     {
         return Controllers\CustomersController::getInstance();
+    }
+    /**
+     * Singleton access to Recipients controller
+     * @return Controllers\RecipientsController The *Singleton* instance
+     */
+    public function getRecipients()
+    {
+        return Controllers\RecipientsController::getInstance();
     }
     /**
      * Singleton access to Charges controller
@@ -73,12 +81,12 @@ class PagarmeCoreApiClient
         return Controllers\ChargesController::getInstance();
     }
     /**
-     * Singleton access to Recipients controller
-     * @return Controllers\RecipientsController The *Singleton* instance
+     * Singleton access to Transfers controller
+     * @return Controllers\TransfersController The *Singleton* instance
      */
-    public function getRecipients()
+    public function getTransfers()
     {
-        return Controllers\RecipientsController::getInstance();
+        return Controllers\TransfersController::getInstance();
     }
     /**
      * Singleton access to Tokens controller
@@ -103,13 +111,5 @@ class PagarmeCoreApiClient
     public function getTransactions()
     {
         return Controllers\TransactionsController::getInstance();
-    }
-    /**
-     * Singleton access to Transfers controller
-     * @return Controllers\TransfersController The *Singleton* instance
-     */
-    public function getTransfers()
-    {
-        return Controllers\TransfersController::getInstance();
     }
 }
