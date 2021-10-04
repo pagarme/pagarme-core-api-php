@@ -112,9 +112,8 @@ class CreateCheckoutPaymentRequest implements JsonSerializable
 
     /**
      * Bank Transfer payment request
-     * @required
      * @maps bank_transfer
-     * @var \PagarmeCoreApiLib\Models\CreateCheckoutBankTransferRequest $bankTransfer public property
+     * @var \PagarmeCoreApiLib\Models\CreateCheckoutBankTransferRequest|null $bankTransfer public property
      */
     public $bankTransfer;
 
@@ -125,6 +124,12 @@ class CreateCheckoutPaymentRequest implements JsonSerializable
      * @var array $acceptedBrands public property
      */
     public $acceptedBrands;
+
+    /**
+     * Pix payment request
+     * @var \PagarmeCoreApiLib\Models\CreateCheckoutPixPaymentRequest|null $pix public property
+     */
+    public $pix;
 
     /**
      * Constructor to set initial or default values of member properties
@@ -158,10 +163,11 @@ class CreateCheckoutPaymentRequest implements JsonSerializable
      *                                                                              >bankTransfer
      * @param array                                  $acceptedBrands              Initialization value for $this-
      *                                                                              >acceptedBrands
+     * @param CreateCheckoutPixPaymentRequest        $pix                         Initialization value for $this->pix
      */
     public function __construct()
     {
-        if (15 == func_num_args()) {
+        if (16 == func_num_args()) {
             $this->acceptedPaymentMethods      = func_get_arg(0);
             $this->acceptedMultiPaymentMethods = func_get_arg(1);
             $this->successUrl                  = func_get_arg(2);
@@ -177,6 +183,7 @@ class CreateCheckoutPaymentRequest implements JsonSerializable
             $this->billingAddress              = func_get_arg(12);
             $this->bankTransfer                = func_get_arg(13);
             $this->acceptedBrands              = func_get_arg(14);
+            $this->pix                         = func_get_arg(15);
         }
     }
 
@@ -202,6 +209,7 @@ class CreateCheckoutPaymentRequest implements JsonSerializable
         $json['billing_address']                = $this->billingAddress;
         $json['bank_transfer']                  = $this->bankTransfer;
         $json['accepted_brands']                = $this->acceptedBrands;
+        $json['pix']                            = $this->pix;
 
         return $json;
     }

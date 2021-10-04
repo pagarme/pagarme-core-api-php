@@ -213,6 +213,12 @@ class GetCheckoutPaymentResponse implements JsonSerializable
     public $acceptedBrands;
 
     /**
+     * Pix payment response
+     * @var \PagarmeCoreApiLib\Models\GetCheckoutPixPaymentResponse|null $pix public property
+     */
+    public $pix;
+
+    /**
      * Constructor to set initial or default values of member properties
      * @param string                                  $id                      Initialization value for $this->id
      * @param integer                                 $amount                  Initialization value for $this->amount
@@ -262,10 +268,11 @@ class GetCheckoutPaymentResponse implements JsonSerializable
      *                                                                           >bankTransfer
      * @param array                                   $acceptedBrands          Initialization value for $this-
      *                                                                           >acceptedBrands
+     * @param GetCheckoutPixPaymentResponse           $pix                     Initialization value for $this->pix
      */
     public function __construct()
     {
-        if (26 == func_num_args()) {
+        if (27 == func_num_args()) {
             $this->id                      = func_get_arg(0);
             $this->amount                  = func_get_arg(1);
             $this->defaultPaymentMethod    = func_get_arg(2);
@@ -292,6 +299,7 @@ class GetCheckoutPaymentResponse implements JsonSerializable
             $this->debitCard               = func_get_arg(23);
             $this->bankTransfer            = func_get_arg(24);
             $this->acceptedBrands          = func_get_arg(25);
+            $this->pix                     = func_get_arg(26);
         }
     }
 
@@ -331,6 +339,7 @@ class GetCheckoutPaymentResponse implements JsonSerializable
         $json['debit_card']                 = $this->debitCard;
         $json['bank_transfer']              = $this->bankTransfer;
         $json['accepted_brands']            = $this->acceptedBrands;
+        $json['pix']                        = $this->pix;
 
         return $json;
     }
