@@ -76,27 +76,37 @@ class CreateBoletoPaymentRequest implements JsonSerializable
     public $documentNumber;
 
     /**
+     * Soft Descriptor
+     * @required
+     * @maps statement_descriptor
+     * @var string $statementDescriptor public property
+     */
+    public $statementDescriptor;
+
+    /**
      * Constructor to set initial or default values of member properties
-     * @param integer               $retries          Initialization value for $this->retries
-     * @param string                $bank             Initialization value for $this->bank
-     * @param string                $instructions     Initialization value for $this->instructions
-     * @param \DateTime             $dueAt            Initialization value for $this->dueAt
-     * @param CreateAddressRequest  $billingAddress   Initialization value for $this->billingAddress
-     * @param string                $billingAddressId Initialization value for $this->billingAddressId
-     * @param string                $nossoNumero      Initialization value for $this->nossoNumero
-     * @param string                $documentNumber   Initialization value for $this->documentNumber
+     * @param integer               $retries             Initialization value for $this->retries
+     * @param string                $bank                Initialization value for $this->bank
+     * @param string                $instructions        Initialization value for $this->instructions
+     * @param \DateTime             $dueAt               Initialization value for $this->dueAt
+     * @param CreateAddressRequest  $billingAddress      Initialization value for $this->billingAddress
+     * @param string                $billingAddressId    Initialization value for $this->billingAddressId
+     * @param string                $nossoNumero         Initialization value for $this->nossoNumero
+     * @param string                $documentNumber      Initialization value for $this->documentNumber
+     * @param string                $statementDescriptor Initialization value for $this->statementDescriptor
      */
     public function __construct()
     {
-        if (8 == func_num_args()) {
-            $this->retries          = func_get_arg(0);
-            $this->bank             = func_get_arg(1);
-            $this->instructions     = func_get_arg(2);
-            $this->dueAt            = func_get_arg(3);
-            $this->billingAddress   = func_get_arg(4);
-            $this->billingAddressId = func_get_arg(5);
-            $this->nossoNumero      = func_get_arg(6);
-            $this->documentNumber   = func_get_arg(7);
+        if (9 == func_num_args()) {
+            $this->retries             = func_get_arg(0);
+            $this->bank                = func_get_arg(1);
+            $this->instructions        = func_get_arg(2);
+            $this->dueAt               = func_get_arg(3);
+            $this->billingAddress      = func_get_arg(4);
+            $this->billingAddressId    = func_get_arg(5);
+            $this->nossoNumero         = func_get_arg(6);
+            $this->documentNumber      = func_get_arg(7);
+            $this->statementDescriptor = func_get_arg(8);
         }
     }
 
@@ -107,15 +117,16 @@ class CreateBoletoPaymentRequest implements JsonSerializable
     public function jsonSerialize()
     {
         $json = array();
-        $json['retries']            = $this->retries;
-        $json['bank']               = $this->bank;
-        $json['instructions']       = $this->instructions;
-        $json['due_at']             = isset($this->dueAt) ?
+        $json['retries']              = $this->retries;
+        $json['bank']                 = $this->bank;
+        $json['instructions']         = $this->instructions;
+        $json['due_at']               = isset($this->dueAt) ?
             DateTimeHelper::toRfc3339DateTime($this->dueAt) : null;
-        $json['billing_address']    = $this->billingAddress;
-        $json['billing_address_id'] = $this->billingAddressId;
-        $json['nosso_numero']       = $this->nossoNumero;
-        $json['document_number']    = $this->documentNumber;
+        $json['billing_address']      = $this->billingAddress;
+        $json['billing_address_id']   = $this->billingAddressId;
+        $json['nosso_numero']         = $this->nossoNumero;
+        $json['document_number']      = $this->documentNumber;
+        $json['statement_descriptor'] = $this->statementDescriptor;
 
         return $json;
     }
