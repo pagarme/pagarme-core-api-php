@@ -24,7 +24,7 @@ class BaseController
      * User-agent to be sent with API calls
      * @var string
      */
-    const USER_AGENT = 'PagarmeCoreApi - PHP 5.0.2';
+    const USER_AGENT = 'PagarmeCoreApi - PHP 5.1.0';
 
     /**
      * HttpCallBack instance associated with this controller
