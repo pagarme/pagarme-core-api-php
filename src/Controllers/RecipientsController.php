@@ -43,65 +43,6 @@ class RecipientsController extends BaseController
     }
 
     /**
-     * Gets a transfer
-     *
-     * @param string $recipientId  Recipient id
-     * @param string $transferId   Transfer id
-     * @return mixed response from the API call
-     * @throws APIException Thrown if API call fails
-     */
-    public function getTransfer(
-        $recipientId,
-        $transferId
-    ) {
-
-        //prepare query string for API call
-        $_queryBuilder = '/recipients/{recipient_id}/transfers/{transfer_id}';
-
-        //process optional query parameters
-        $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
-            'recipient_id' => $recipientId,
-            'transfer_id'  => $transferId,
-            ));
-
-        //validate and preprocess url
-        $_queryUrl = APIHelper::cleanUrl(Configuration::$BASEURI . $_queryBuilder);
-
-        //prepare headers
-        $_headers = array (
-            'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
-        );
-
-        //set HTTP basic auth parameters
-        Request::auth(Configuration::$basicAuthUserName, Configuration::$basicAuthPassword);
-
-        //call on-before Http callback
-        $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
-        if ($this->getHttpCallBack() != null) {
-            $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
-        }
-
-        //and invoke the API call request to fetch the response
-        $response = Request::get($_queryUrl, $_headers);
-
-        $_httpResponse = new HttpResponse($response->code, $response->headers, $response->raw_body);
-        $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
-
-        //call on-after Http callback
-        if ($this->getHttpCallBack() != null) {
-            $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
-        }
-
-        //handle errors defined at the API level
-        $this->validateResponse($_httpResponse, $_httpContext);
-
-        $mapper = $this->getJsonMapper();
-
-        return $mapper->mapClass($response->body, 'PagarmeCoreApiLib\\Models\\GetTransferResponse');
-    }
-
-    /**
      * Updates a recipient
      *
      * @param string                        $recipientId     Recipient id
@@ -621,6 +562,65 @@ class RecipientsController extends BaseController
     }
 
     /**
+     * Gets a transfer
+     *
+     * @param string $recipientId  Recipient id
+     * @param string $transferId   Transfer id
+     * @return mixed response from the API call
+     * @throws APIException Thrown if API call fails
+     */
+    public function getTransfer(
+        $recipientId,
+        $transferId
+    ) {
+
+        //prepare query string for API call
+        $_queryBuilder = '/recipients/{recipient_id}/transfers/{transfer_id}';
+
+        //process optional query parameters
+        $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
+            'recipient_id' => $recipientId,
+            'transfer_id'  => $transferId,
+            ));
+
+        //validate and preprocess url
+        $_queryUrl = APIHelper::cleanUrl(Configuration::$BASEURI . $_queryBuilder);
+
+        //prepare headers
+        $_headers = array (
+            'user-agent'    => BaseController::USER_AGENT,
+            'Accept'        => 'application/json'
+        );
+
+        //set HTTP basic auth parameters
+        Request::auth(Configuration::$basicAuthUserName, Configuration::$basicAuthPassword);
+
+        //call on-before Http callback
+        $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
+        if ($this->getHttpCallBack() != null) {
+            $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
+        }
+
+        //and invoke the API call request to fetch the response
+        $response = Request::get($_queryUrl, $_headers);
+
+        $_httpResponse = new HttpResponse($response->code, $response->headers, $response->raw_body);
+        $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
+
+        //call on-after Http callback
+        if ($this->getHttpCallBack() != null) {
+            $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
+        }
+
+        //handle errors defined at the API level
+        $this->validateResponse($_httpResponse, $_httpContext);
+
+        $mapper = $this->getJsonMapper();
+
+        return $mapper->mapClass($response->body, 'PagarmeCoreApiLib\\Models\\GetTransferResponse');
+    }
+
+    /**
      * @todo Add general description for this endpoint
      *
      * @param string                       $recipientId  TODO: type description here
@@ -1013,6 +1013,62 @@ class RecipientsController extends BaseController
     }
 
     /**
+     * Get balance information for a recipient
+     *
+     * @param string $recipientId  Recipient id
+     * @return mixed response from the API call
+     * @throws APIException Thrown if API call fails
+     */
+    public function getBalance(
+        $recipientId
+    ) {
+
+        //prepare query string for API call
+        $_queryBuilder = '/recipients/{recipient_id}/balance';
+
+        //process optional query parameters
+        $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
+            'recipient_id' => $recipientId,
+            ));
+
+        //validate and preprocess url
+        $_queryUrl = APIHelper::cleanUrl(Configuration::$BASEURI . $_queryBuilder);
+
+        //prepare headers
+        $_headers = array (
+            'user-agent'    => BaseController::USER_AGENT,
+            'Accept'        => 'application/json'
+        );
+
+        //set HTTP basic auth parameters
+        Request::auth(Configuration::$basicAuthUserName, Configuration::$basicAuthPassword);
+
+        //call on-before Http callback
+        $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
+        if ($this->getHttpCallBack() != null) {
+            $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
+        }
+
+        //and invoke the API call request to fetch the response
+        $response = Request::get($_queryUrl, $_headers);
+
+        $_httpResponse = new HttpResponse($response->code, $response->headers, $response->raw_body);
+        $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
+
+        //call on-after Http callback
+        if ($this->getHttpCallBack() != null) {
+            $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
+        }
+
+        //handle errors defined at the API level
+        $this->validateResponse($_httpResponse, $_httpContext);
+
+        $mapper = $this->getJsonMapper();
+
+        return $mapper->mapClass($response->body, 'PagarmeCoreApiLib\\Models\\GetBalanceResponse');
+    }
+
+    /**
      * Gets a paginated list of transfers for the recipient
      *
      * @param string   $recipientId   TODO: type description here
@@ -1085,62 +1141,6 @@ class RecipientsController extends BaseController
         $mapper = $this->getJsonMapper();
 
         return $mapper->mapClass($response->body, 'PagarmeCoreApiLib\\Models\\ListWithdrawals');
-    }
-
-    /**
-     * Get balance information for a recipient
-     *
-     * @param string $recipientId  Recipient id
-     * @return mixed response from the API call
-     * @throws APIException Thrown if API call fails
-     */
-    public function getBalance(
-        $recipientId
-    ) {
-
-        //prepare query string for API call
-        $_queryBuilder = '/recipients/{recipient_id}/balance';
-
-        //process optional query parameters
-        $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
-            'recipient_id' => $recipientId,
-            ));
-
-        //validate and preprocess url
-        $_queryUrl = APIHelper::cleanUrl(Configuration::$BASEURI . $_queryBuilder);
-
-        //prepare headers
-        $_headers = array (
-            'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
-        );
-
-        //set HTTP basic auth parameters
-        Request::auth(Configuration::$basicAuthUserName, Configuration::$basicAuthPassword);
-
-        //call on-before Http callback
-        $_httpRequest = new HttpRequest(HttpMethod::GET, $_headers, $_queryUrl);
-        if ($this->getHttpCallBack() != null) {
-            $this->getHttpCallBack()->callOnBeforeRequest($_httpRequest);
-        }
-
-        //and invoke the API call request to fetch the response
-        $response = Request::get($_queryUrl, $_headers);
-
-        $_httpResponse = new HttpResponse($response->code, $response->headers, $response->raw_body);
-        $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
-
-        //call on-after Http callback
-        if ($this->getHttpCallBack() != null) {
-            $this->getHttpCallBack()->callOnAfterRequest($_httpContext);
-        }
-
-        //handle errors defined at the API level
-        $this->validateResponse($_httpResponse, $_httpContext);
-
-        $mapper = $this->getJsonMapper();
-
-        return $mapper->mapClass($response->body, 'PagarmeCoreApiLib\\Models\\GetBalanceResponse');
     }
 
     /**
