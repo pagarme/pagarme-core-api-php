@@ -41,14 +41,6 @@ class PagarmeCoreApiClient
         return Controllers\SubscriptionsController::getInstance();
     }
     /**
-     * Singleton access to Invoices controller
-     * @return Controllers\InvoicesController The *Singleton* instance
-     */
-    public function getInvoices()
-    {
-        return Controllers\InvoicesController::getInstance();
-    }
-    /**
      * Singleton access to Orders controller
      * @return Controllers\OrdersController The *Singleton* instance
      */
@@ -57,20 +49,20 @@ class PagarmeCoreApiClient
         return Controllers\OrdersController::getInstance();
     }
     /**
+     * Singleton access to Invoices controller
+     * @return Controllers\InvoicesController The *Singleton* instance
+     */
+    public function getInvoices()
+    {
+        return Controllers\InvoicesController::getInstance();
+    }
+    /**
      * Singleton access to Customers controller
      * @return Controllers\CustomersController The *Singleton* instance
      */
     public function getCustomers()
     {
         return Controllers\CustomersController::getInstance();
-    }
-    /**
-     * Singleton access to Recipients controller
-     * @return Controllers\RecipientsController The *Singleton* instance
-     */
-    public function getRecipients()
-    {
-        return Controllers\RecipientsController::getInstance();
     }
     /**
      * Singleton access to Charges controller
@@ -89,20 +81,20 @@ class PagarmeCoreApiClient
         return Controllers\TransfersController::getInstance();
     }
     /**
+     * Singleton access to Recipients controller
+     * @return Controllers\RecipientsController The *Singleton* instance
+     */
+    public function getRecipients()
+    {
+        return Controllers\RecipientsController::getInstance();
+    }
+    /**
      * Singleton access to Tokens controller
      * @return Controllers\TokensController The *Singleton* instance
      */
     public function getTokens()
     {
         return Controllers\TokensController::getInstance();
-    }
-    /**
-     * Singleton access to Sellers controller
-     * @return Controllers\SellersController The *Singleton* instance
-     */
-    public function getSellers()
-    {
-        return Controllers\SellersController::getInstance();
     }
     /**
      * Singleton access to Transactions controller

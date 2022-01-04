@@ -134,14 +134,13 @@ $client = new PagarmeCoreApiLib\PagarmeCoreApiClient($basicAuthUserName, $basicA
 
 * [PlansController](#plans_controller)
 * [SubscriptionsController](#subscriptions_controller)
-* [InvoicesController](#invoices_controller)
 * [OrdersController](#orders_controller)
+* [InvoicesController](#invoices_controller)
 * [CustomersController](#customers_controller)
-* [RecipientsController](#recipients_controller)
 * [ChargesController](#charges_controller)
 * [TransfersController](#transfers_controller)
+* [RecipientsController](#recipients_controller)
 * [TokensController](#tokens_controller)
-* [SellersController](#sellers_controller)
 * [TransactionsController](#transactions_controller)
 
 ## <a name="plans_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PlansController") PlansController
@@ -177,37 +176,6 @@ function getPlan($planId)
 $planId = 'plan_id';
 
 $result = $plans->getPlan($planId);
-
-```
-
-
-### <a name="delete_plan"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.deletePlan") deletePlan
-
-> Deletes a plan
-
-
-```php
-function deletePlan(
-        $planId,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$planId = 'plan_id';
-$idempotencyKey = 'idempotency-key';
-
-$result = $plans->deletePlan($planId, $idempotencyKey);
 
 ```
 
@@ -446,8 +414,8 @@ function getPlans(
 #### Example Usage
 
 ```php
-$page = 42;
-$size = 42;
+$page = 224;
+$size = 224;
 $name = 'name';
 $status = 'status';
 $billingType = 'billing_type';
@@ -493,6 +461,37 @@ $result = $plans->updatePlan($planId, $request, $idempotencyKey);
 ```
 
 
+### <a name="delete_plan"></a>![Method: ](https://apidocs.io/img/method.png ".PlansController.deletePlan") deletePlan
+
+> Deletes a plan
+
+
+```php
+function deletePlan(
+        $planId,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | Plan id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$planId = 'plan_id';
+$idempotencyKey = 'idempotency-key';
+
+$result = $plans->deletePlan($planId, $idempotencyKey);
+
+```
+
+
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="subscriptions_controller"></a>![Class: ](https://apidocs.io/img/class.png ".SubscriptionsController") SubscriptionsController
@@ -504,37 +503,6 @@ The singleton instance of the ``` SubscriptionsController ``` class can be acces
 ```php
 $subscriptions = $client->getSubscriptions();
 ```
-
-### <a name="renew_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.renewSubscription") renewSubscription
-
-> TODO: Add a method description
-
-
-```php
-function renewSubscription(
-        $subscriptionId,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$subscriptionId = 'subscription_id';
-$idempotencyKey = 'idempotency-key';
-
-$result = $subscriptions->renewSubscription($subscriptionId, $idempotencyKey);
-
-```
-
 
 ### <a name="update_subscription_card"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionCard") updateSubscriptionCard
 
@@ -709,6 +677,40 @@ $subscriptions->updateCurrentCycleStatus($subscriptionId, $request, $idempotency
 ```
 
 
+### <a name="update_subscription_payment_method"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionPaymentMethod") updateSubscriptionPaymentMethod
+
+> Updates the payment method from a subscription
+
+
+```php
+function updateSubscriptionPaymentMethod(
+        $subscriptionId,
+        $request,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| request |  ``` Required ```  | Request for updating the paymentmethod from a subscription |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$subscriptionId = 'subscription_id';
+$request = new UpdateSubscriptionPaymentMethodRequest();
+$idempotencyKey = 'idempotency-key';
+
+$result = $subscriptions->updateSubscriptionPaymentMethod($subscriptionId, $request, $idempotencyKey);
+
+```
+
+
 ### <a name="delete_discount"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.deleteDiscount") deleteDiscount
 
 > Deletes a discount
@@ -781,8 +783,8 @@ function getSubscriptionItems(
 
 ```php
 $subscriptionId = 'subscription_id';
-$page = 0;
-$size = 0;
+$page = 61;
+$size = 61;
 $name = 'name';
 $code = 'code';
 $status = 'status';
@@ -791,40 +793,6 @@ $createdSince = 'created_since';
 $createdUntil = 'created_until';
 
 $result = $subscriptions->getSubscriptionItems($subscriptionId, $page, $size, $name, $code, $status, $description, $createdSince, $createdUntil);
-
-```
-
-
-### <a name="update_subscription_payment_method"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.updateSubscriptionPaymentMethod") updateSubscriptionPaymentMethod
-
-> Updates the payment method from a subscription
-
-
-```php
-function updateSubscriptionPaymentMethod(
-        $subscriptionId,
-        $request,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| request |  ``` Required ```  | Request for updating the paymentmethod from a subscription |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$subscriptionId = 'subscription_id';
-$request = new UpdateSubscriptionPaymentMethodRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $subscriptions->updateSubscriptionPaymentMethod($subscriptionId, $request, $idempotencyKey);
 
 ```
 
@@ -903,8 +871,8 @@ function getSubscriptions(
 #### Example Usage
 
 ```php
-$page = 0;
-$size = 0;
+$page = 61;
+$size = 61;
 $code = 'code';
 $billingType = 'billing_type';
 $customerId = 'customer_id';
@@ -1026,37 +994,6 @@ $result = $subscriptions->createUsage($subscriptionId, $itemId, $body, $idempote
 ```
 
 
-### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscountById") getDiscountById
-
-> TODO: Add a method description
-
-
-```php
-function getDiscountById(
-        $subscriptionId,
-        $discountId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| discountId |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$subscriptionId = 'subscription_id';
-$discountId = 'discountId';
-
-$result = $subscriptions->getDiscountById($subscriptionId, $discountId);
-
-```
-
-
 ### <a name="create_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.createSubscription") createSubscription
 
 > Creates a new subscription
@@ -1088,23 +1025,23 @@ $result = $subscriptions->createSubscription($body, $idempotencyKey);
 ```
 
 
-### <a name="get_increment_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getIncrementById") getIncrementById
+### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscountById") getDiscountById
 
 > TODO: Add a method description
 
 
 ```php
-function getIncrementById(
+function getDiscountById(
         $subscriptionId,
-        $incrementId)
+        $discountId)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription Id |
-| incrementId |  ``` Required ```  | The increment Id |
+| subscriptionId |  ``` Required ```  | The subscription id |
+| discountId |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -1112,9 +1049,9 @@ function getIncrementById(
 
 ```php
 $subscriptionId = 'subscription_id';
-$incrementId = 'increment_id';
+$discountId = 'discountId';
 
-$result = $subscriptions->getIncrementById($subscriptionId, $incrementId);
+$result = $subscriptions->getDiscountById($subscriptionId, $discountId);
 
 ```
 
@@ -1255,6 +1192,37 @@ $result = $subscriptions->getSubscriptionCycles($subscriptionId, $page, $size);
 ```
 
 
+### <a name="get_increment_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getIncrementById") getIncrementById
+
+> TODO: Add a method description
+
+
+```php
+function getIncrementById(
+        $subscriptionId,
+        $incrementId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription Id |
+| incrementId |  ``` Required ```  | The increment Id |
+
+
+
+#### Example Usage
+
+```php
+$subscriptionId = 'subscription_id';
+$incrementId = 'increment_id';
+
+$result = $subscriptions->getIncrementById($subscriptionId, $incrementId);
+
+```
+
+
 ### <a name="get_discounts"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getDiscounts") getDiscounts
 
 > TODO: Add a method description
@@ -1281,8 +1249,8 @@ function getDiscounts(
 
 ```php
 $subscriptionId = 'subscription_id';
-$page = 0;
-$size = 0;
+$page = 61;
+$size = 61;
 
 $result = $subscriptions->getDiscounts($subscriptionId, $page, $size);
 
@@ -1383,8 +1351,8 @@ function getIncrements(
 
 ```php
 $subscriptionId = 'subscription_id';
-$page = 0;
-$size = 0;
+$page = 61;
+$size = 61;
 
 $result = $subscriptions->getIncrements($subscriptionId, $page, $size);
 
@@ -1594,8 +1562,8 @@ function getUsages(
 ```php
 $subscriptionId = 'subscription_id';
 $itemId = 'item_id';
-$page = 0;
-$size = 0;
+$page = 61;
+$size = 61;
 $code = 'code';
 $group = 'group';
 $usedSince = date("D M d, Y G:i");
@@ -1705,6 +1673,37 @@ $result = $subscriptions->getSubscriptionCycleById($subscriptionId, $cycleId);
 ```
 
 
+### <a name="renew_subscription"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.renewSubscription") renewSubscription
+
+> TODO: Add a method description
+
+
+```php
+function renewSubscription(
+        $subscriptionId,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$subscriptionId = 'subscription_id';
+$idempotencyKey = 'idempotency-key';
+
+$result = $subscriptions->renewSubscription($subscriptionId, $idempotencyKey);
+
+```
+
+
 ### <a name="get_usage_report"></a>![Method: ](https://apidocs.io/img/method.png ".SubscriptionsController.getUsageReport") getUsageReport
 
 > TODO: Add a method description
@@ -1732,266 +1731,6 @@ $subscriptionId = 'subscription_id';
 $periodId = 'period_id';
 
 $result = $subscriptions->getUsageReport($subscriptionId, $periodId);
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="invoices_controller"></a>![Class: ](https://apidocs.io/img/class.png ".InvoicesController") InvoicesController
-
-### Get singleton instance
-
-The singleton instance of the ``` InvoicesController ``` class can be accessed from the API Client.
-
-```php
-$invoices = $client->getInvoices();
-```
-
-### <a name="update_invoice_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.updateInvoiceMetadata") updateInvoiceMetadata
-
-> Updates the metadata from an invoice
-
-
-```php
-function updateInvoiceMetadata(
-        $invoiceId,
-        $request,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| invoiceId |  ``` Required ```  | The invoice id |
-| request |  ``` Required ```  | Request for updating the invoice metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$invoiceId = 'invoice_id';
-$request = new UpdateMetadataRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $invoices->updateInvoiceMetadata($invoiceId, $request, $idempotencyKey);
-
-```
-
-
-### <a name="get_partial_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.getPartialInvoice") getPartialInvoice
-
-> TODO: Add a method description
-
-
-```php
-function getPartialInvoice($subscriptionId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-
-
-
-#### Example Usage
-
-```php
-$subscriptionId = 'subscription_id';
-
-$result = $invoices->getPartialInvoice($subscriptionId);
-
-```
-
-
-### <a name="cancel_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.cancelInvoice") cancelInvoice
-
-> Cancels an invoice
-
-
-```php
-function cancelInvoice(
-        $invoiceId,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| invoiceId |  ``` Required ```  | Invoice id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$invoiceId = 'invoice_id';
-$idempotencyKey = 'idempotency-key';
-
-$result = $invoices->cancelInvoice($invoiceId, $idempotencyKey);
-
-```
-
-
-### <a name="create_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.createInvoice") createInvoice
-
-> Create an Invoice
-
-
-```php
-function createInvoice(
-        $subscriptionId,
-        $cycleId,
-        $request = null,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| cycleId |  ``` Required ```  | Cycle Id |
-| request |  ``` Optional ```  | TODO: Add a parameter description |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$subscriptionId = 'subscription_id';
-$cycleId = 'cycle_id';
-$request = new CreateInvoiceRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $invoices->createInvoice($subscriptionId, $cycleId, $request, $idempotencyKey);
-
-```
-
-
-### <a name="get_invoices"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.getInvoices") getInvoices
-
-> Gets all invoices
-
-
-```php
-function getInvoices(
-        $page = null,
-        $size = null,
-        $code = null,
-        $customerId = null,
-        $subscriptionId = null,
-        $createdSince = null,
-        $createdUntil = null,
-        $status = null,
-        $dueSince = null,
-        $dueUntil = null,
-        $customerDocument = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| code |  ``` Optional ```  | Filter for Invoice's code |
-| customerId |  ``` Optional ```  | Filter for Invoice's customer id |
-| subscriptionId |  ``` Optional ```  | Filter for Invoice's subscription id |
-| createdSince |  ``` Optional ```  | Filter for Invoice's creation date start range |
-| createdUntil |  ``` Optional ```  | Filter for Invoices creation date end range |
-| status |  ``` Optional ```  | Filter for Invoice's status |
-| dueSince |  ``` Optional ```  | Filter for Invoice's due date start range |
-| dueUntil |  ``` Optional ```  | Filter for Invoice's due date end range |
-| customerDocument |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$page = 0;
-$size = 0;
-$code = 'code';
-$customerId = 'customer_id';
-$subscriptionId = 'subscription_id';
-$createdSince = date("D M d, Y G:i");
-$createdUntil = date("D M d, Y G:i");
-$status = 'status';
-$dueSince = date("D M d, Y G:i");
-$dueUntil = date("D M d, Y G:i");
-$customerDocument = 'customer_document';
-
-$result = $invoices->getInvoices($page, $size, $code, $customerId, $subscriptionId, $createdSince, $createdUntil, $status, $dueSince, $dueUntil, $customerDocument);
-
-```
-
-
-### <a name="get_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.getInvoice") getInvoice
-
-> Gets an invoice
-
-
-```php
-function getInvoice($invoiceId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| invoiceId |  ``` Required ```  | Invoice Id |
-
-
-
-#### Example Usage
-
-```php
-$invoiceId = 'invoice_id';
-
-$result = $invoices->getInvoice($invoiceId);
-
-```
-
-
-### <a name="update_invoice_status"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.updateInvoiceStatus") updateInvoiceStatus
-
-> Updates the status from an invoice
-
-
-```php
-function updateInvoiceStatus(
-        $invoiceId,
-        $request,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| invoiceId |  ``` Required ```  | Invoice Id |
-| request |  ``` Required ```  | Request for updating an invoice's status |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$invoiceId = 'invoice_id';
-$request = new UpdateInvoiceStatusRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $invoices->updateInvoiceStatus($invoiceId, $request, $idempotencyKey);
 
 ```
 
@@ -2041,8 +1780,8 @@ function getOrders(
 #### Example Usage
 
 ```php
-$page = 0;
-$size = 0;
+$page = 61;
+$size = 61;
 $code = 'code';
 $status = 'status';
 $createdSince = date("D M d, Y G:i");
@@ -2050,6 +1789,37 @@ $createdUntil = date("D M d, Y G:i");
 $customerId = 'customer_id';
 
 $result = $orders->getOrders($page, $size, $code, $status, $createdSince, $createdUntil, $customerId);
+
+```
+
+
+### <a name="delete_all_order_items"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.deleteAllOrderItems") deleteAllOrderItems
+
+> TODO: Add a method description
+
+
+```php
+function deleteAllOrderItems(
+        $orderId,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order Id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$orderId = 'orderId';
+$idempotencyKey = 'idempotency-key';
+
+$result = $orders->deleteAllOrderItems($orderId, $idempotencyKey);
 
 ```
 
@@ -2087,37 +1857,6 @@ $request = new UpdateOrderItemRequest();
 $idempotencyKey = 'idempotency-key';
 
 $result = $orders->updateOrderItem($orderId, $itemId, $request, $idempotencyKey);
-
-```
-
-
-### <a name="delete_all_order_items"></a>![Method: ](https://apidocs.io/img/method.png ".OrdersController.deleteAllOrderItems") deleteAllOrderItems
-
-> TODO: Add a method description
-
-
-```php
-function deleteAllOrderItems(
-        $orderId,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | Order Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$orderId = 'orderId';
-$idempotencyKey = 'idempotency-key';
-
-$result = $orders->deleteAllOrderItems($orderId, $idempotencyKey);
 
 ```
 
@@ -2349,6 +2088,266 @@ $result = $orders->getOrder($orderId);
 
 [Back to List of Controllers](#list_of_controllers)
 
+## <a name="invoices_controller"></a>![Class: ](https://apidocs.io/img/class.png ".InvoicesController") InvoicesController
+
+### Get singleton instance
+
+The singleton instance of the ``` InvoicesController ``` class can be accessed from the API Client.
+
+```php
+$invoices = $client->getInvoices();
+```
+
+### <a name="get_partial_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.getPartialInvoice") getPartialInvoice
+
+> TODO: Add a method description
+
+
+```php
+function getPartialInvoice($subscriptionId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+
+
+
+#### Example Usage
+
+```php
+$subscriptionId = 'subscription_id';
+
+$result = $invoices->getPartialInvoice($subscriptionId);
+
+```
+
+
+### <a name="cancel_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.cancelInvoice") cancelInvoice
+
+> Cancels an invoice
+
+
+```php
+function cancelInvoice(
+        $invoiceId,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| invoiceId |  ``` Required ```  | Invoice id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$invoiceId = 'invoice_id';
+$idempotencyKey = 'idempotency-key';
+
+$result = $invoices->cancelInvoice($invoiceId, $idempotencyKey);
+
+```
+
+
+### <a name="create_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.createInvoice") createInvoice
+
+> Create an Invoice
+
+
+```php
+function createInvoice(
+        $subscriptionId,
+        $cycleId,
+        $request = null,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| cycleId |  ``` Required ```  | Cycle Id |
+| request |  ``` Optional ```  | TODO: Add a parameter description |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$subscriptionId = 'subscription_id';
+$cycleId = 'cycle_id';
+$request = new CreateInvoiceRequest();
+$idempotencyKey = 'idempotency-key';
+
+$result = $invoices->createInvoice($subscriptionId, $cycleId, $request, $idempotencyKey);
+
+```
+
+
+### <a name="update_invoice_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.updateInvoiceMetadata") updateInvoiceMetadata
+
+> Updates the metadata from an invoice
+
+
+```php
+function updateInvoiceMetadata(
+        $invoiceId,
+        $request,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| invoiceId |  ``` Required ```  | The invoice id |
+| request |  ``` Required ```  | Request for updating the invoice metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$invoiceId = 'invoice_id';
+$request = new UpdateMetadataRequest();
+$idempotencyKey = 'idempotency-key';
+
+$result = $invoices->updateInvoiceMetadata($invoiceId, $request, $idempotencyKey);
+
+```
+
+
+### <a name="get_invoices"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.getInvoices") getInvoices
+
+> Gets all invoices
+
+
+```php
+function getInvoices(
+        $page = null,
+        $size = null,
+        $code = null,
+        $customerId = null,
+        $subscriptionId = null,
+        $createdSince = null,
+        $createdUntil = null,
+        $status = null,
+        $dueSince = null,
+        $dueUntil = null,
+        $customerDocument = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| code |  ``` Optional ```  | Filter for Invoice's code |
+| customerId |  ``` Optional ```  | Filter for Invoice's customer id |
+| subscriptionId |  ``` Optional ```  | Filter for Invoice's subscription id |
+| createdSince |  ``` Optional ```  | Filter for Invoice's creation date start range |
+| createdUntil |  ``` Optional ```  | Filter for Invoices creation date end range |
+| status |  ``` Optional ```  | Filter for Invoice's status |
+| dueSince |  ``` Optional ```  | Filter for Invoice's due date start range |
+| dueUntil |  ``` Optional ```  | Filter for Invoice's due date end range |
+| customerDocument |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$page = 152;
+$size = 152;
+$code = 'code';
+$customerId = 'customer_id';
+$subscriptionId = 'subscription_id';
+$createdSince = date("D M d, Y G:i");
+$createdUntil = date("D M d, Y G:i");
+$status = 'status';
+$dueSince = date("D M d, Y G:i");
+$dueUntil = date("D M d, Y G:i");
+$customerDocument = 'customer_document';
+
+$result = $invoices->getInvoices($page, $size, $code, $customerId, $subscriptionId, $createdSince, $createdUntil, $status, $dueSince, $dueUntil, $customerDocument);
+
+```
+
+
+### <a name="get_invoice"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.getInvoice") getInvoice
+
+> Gets an invoice
+
+
+```php
+function getInvoice($invoiceId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| invoiceId |  ``` Required ```  | Invoice Id |
+
+
+
+#### Example Usage
+
+```php
+$invoiceId = 'invoice_id';
+
+$result = $invoices->getInvoice($invoiceId);
+
+```
+
+
+### <a name="update_invoice_status"></a>![Method: ](https://apidocs.io/img/method.png ".InvoicesController.updateInvoiceStatus") updateInvoiceStatus
+
+> Updates the status from an invoice
+
+
+```php
+function updateInvoiceStatus(
+        $invoiceId,
+        $request,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| invoiceId |  ``` Required ```  | Invoice Id |
+| request |  ``` Required ```  | Request for updating an invoice's status |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$invoiceId = 'invoice_id';
+$request = new UpdateInvoiceStatusRequest();
+$idempotencyKey = 'idempotency-key';
+
+$result = $invoices->updateInvoiceStatus($invoiceId, $request, $idempotencyKey);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
 ## <a name="customers_controller"></a>![Class: ](https://apidocs.io/img/class.png ".CustomersController") CustomersController
 
 ### Get singleton instance
@@ -2467,13 +2466,14 @@ $result = $customers->deleteAccessToken($customerId, $tokenId, $idempotencyKey);
 ```
 
 
-### <a name="create_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.createCustomer") createCustomer
+### <a name="create_access_token"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.createAccessToken") createAccessToken
 
-> Creates a new customer
+> Creates a access token for a customer
 
 
 ```php
-function createCustomer(
+function createAccessToken(
+        $customerId,
         $request,
         $idempotencyKey = null)
 ```
@@ -2482,7 +2482,8 @@ function createCustomer(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| request |  ``` Required ```  | Request for creating a customer |
+| customerId |  ``` Required ```  | Customer Id |
+| request |  ``` Required ```  | Request for creating a access token |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -2490,10 +2491,11 @@ function createCustomer(
 #### Example Usage
 
 ```php
-$request = new CreateCustomerRequest();
+$customerId = 'customer_id';
+$request = new CreateAccessTokenRequest();
 $idempotencyKey = 'idempotency-key';
 
-$result = $customers->createCustomer($request, $idempotencyKey);
+$result = $customers->createAccessToken($customerId, $request, $idempotencyKey);
 
 ```
 
@@ -2528,6 +2530,37 @@ $request = new CreateAddressRequest();
 $idempotencyKey = 'idempotency-key';
 
 $result = $customers->createAddress($customerId, $request, $idempotencyKey);
+
+```
+
+
+### <a name="create_customer"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.createCustomer") createCustomer
+
+> Creates a new customer
+
+
+```php
+function createCustomer(
+        $request,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| request |  ``` Required ```  | Request for creating a customer |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$request = new CreateCustomerRequest();
+$idempotencyKey = 'idempotency-key';
+
+$result = $customers->createCustomer($request, $idempotencyKey);
 
 ```
 
@@ -2735,40 +2768,6 @@ $result = $customers->updateCustomer($customerId, $request, $idempotencyKey);
 ```
 
 
-### <a name="create_access_token"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.createAccessToken") createAccessToken
-
-> Creates a access token for a customer
-
-
-```php
-function createAccessToken(
-        $customerId,
-        $request,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| request |  ``` Required ```  | Request for creating a access token |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$customerId = 'customer_id';
-$request = new CreateAccessTokenRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $customers->createAccessToken($customerId, $request, $idempotencyKey);
-
-```
-
-
 ### <a name="get_access_tokens"></a>![Method: ](https://apidocs.io/img/method.png ".CustomersController.getAccessTokens") getAccessTokens
 
 > Get all access tokens from a customer
@@ -2795,8 +2794,8 @@ function getAccessTokens(
 
 ```php
 $customerId = 'customer_id';
-$page = 91;
-$size = 91;
+$page = 152;
+$size = 152;
 
 $result = $customers->getAccessTokens($customerId, $page, $size);
 
@@ -2829,8 +2828,8 @@ function getCards(
 
 ```php
 $customerId = 'customer_id';
-$page = 91;
-$size = 91;
+$page = 152;
+$size = 152;
 
 $result = $customers->getCards($customerId, $page, $size);
 
@@ -2996,8 +2995,8 @@ function getAddresses(
 
 ```php
 $customerId = 'customer_id';
-$page = 91;
-$size = 91;
+$page = 152;
+$size = 152;
 
 $result = $customers->getAddresses($customerId, $page, $size);
 
@@ -3064,713 +3063,6 @@ $result = $customers->getCard($customerId, $cardId);
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="recipients_controller"></a>![Class: ](https://apidocs.io/img/class.png ".RecipientsController") RecipientsController
-
-### Get singleton instance
-
-The singleton instance of the ``` RecipientsController ``` class can be accessed from the API Client.
-
-```php
-$recipients = $client->getRecipients();
-```
-
-### <a name="update_recipient"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateRecipient") updateRecipient
-
-> Updates a recipient
-
-
-```php
-function updateRecipient(
-        $recipientId,
-        $request,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| request |  ``` Required ```  | Recipient data |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-$request = new UpdateRecipientRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $recipients->updateRecipient($recipientId, $request, $idempotencyKey);
-
-```
-
-
-### <a name="create_anticipation"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createAnticipation") createAnticipation
-
-> Creates an anticipation
-
-
-```php
-function createAnticipation(
-        $recipientId,
-        $request,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| request |  ``` Required ```  | Anticipation data |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-$request = new CreateAnticipationRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $recipients->createAnticipation($recipientId, $request, $idempotencyKey);
-
-```
-
-
-### <a name="get_anticipation_limits"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getAnticipationLimits") getAnticipationLimits
-
-> Gets the anticipation limits for a recipient
-
-
-```php
-function getAnticipationLimits(
-        $recipientId,
-        $timeframe,
-        $paymentDate)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| timeframe |  ``` Required ```  | Timeframe |
-| paymentDate |  ``` Required ```  | Anticipation payment date |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-$timeframe = 'timeframe';
-$paymentDate = date("D M d, Y G:i");
-
-$result = $recipients->getAnticipationLimits($recipientId, $timeframe, $paymentDate);
-
-```
-
-
-### <a name="get_recipients"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getRecipients") getRecipients
-
-> Retrieves paginated recipients information
-
-
-```php
-function getRecipients(
-        $page = null,
-        $size = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-
-#### Example Usage
-
-```php
-$page = 91;
-$size = 91;
-
-$result = $recipients->getRecipients($page, $size);
-
-```
-
-
-### <a name="get_withdraw_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getWithdrawById") getWithdrawById
-
-> TODO: Add a method description
-
-
-```php
-function getWithdrawById(
-        $recipientId,
-        $withdrawalId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | TODO: Add a parameter description |
-| withdrawalId |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-$withdrawalId = 'withdrawal_id';
-
-$result = $recipients->getWithdrawById($recipientId, $withdrawalId);
-
-```
-
-
-### <a name="update_recipient_default_bank_account"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateRecipientDefaultBankAccount") updateRecipientDefaultBankAccount
-
-> Updates the default bank account from a recipient
-
-
-```php
-function updateRecipientDefaultBankAccount(
-        $recipientId,
-        $request,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| request |  ``` Required ```  | Bank account data |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-$request = new UpdateRecipientBankAccountRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $recipients->updateRecipientDefaultBankAccount($recipientId, $request, $idempotencyKey);
-
-```
-
-
-### <a name="update_recipient_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateRecipientMetadata") updateRecipientMetadata
-
-> Updates recipient metadata
-
-
-```php
-function updateRecipientMetadata(
-        $recipientId,
-        $request,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| request |  ``` Required ```  | Metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-$request = new UpdateMetadataRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $recipients->updateRecipientMetadata($recipientId, $request, $idempotencyKey);
-
-```
-
-
-### <a name="get_transfers"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getTransfers") getTransfers
-
-> Gets a paginated list of transfers for the recipient
-
-
-```php
-function getTransfers(
-        $recipientId,
-        $page = null,
-        $size = null,
-        $status = null,
-        $createdSince = null,
-        $createdUntil = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| status |  ``` Optional ```  | Filter for transfer status |
-| createdSince |  ``` Optional ```  | Filter for start range of transfer creation date |
-| createdUntil |  ``` Optional ```  | Filter for end range of transfer creation date |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-$page = 91;
-$size = 91;
-$status = 'status';
-$createdSince = date("D M d, Y G:i");
-$createdUntil = date("D M d, Y G:i");
-
-$result = $recipients->getTransfers($recipientId, $page, $size, $status, $createdSince, $createdUntil);
-
-```
-
-
-### <a name="get_transfer"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getTransfer") getTransfer
-
-> Gets a transfer
-
-
-```php
-function getTransfer(
-        $recipientId,
-        $transferId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| transferId |  ``` Required ```  | Transfer id |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-$transferId = 'transfer_id';
-
-$result = $recipients->getTransfer($recipientId, $transferId);
-
-```
-
-
-### <a name="create_withdraw"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createWithdraw") createWithdraw
-
-> TODO: Add a method description
-
-
-```php
-function createWithdraw(
-        $recipientId,
-        $request)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | TODO: Add a parameter description |
-| request |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-$request = new CreateWithdrawRequest();
-
-$result = $recipients->createWithdraw($recipientId, $request);
-
-```
-
-
-### <a name="update_automatic_anticipation_settings"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateAutomaticAnticipationSettings") updateAutomaticAnticipationSettings
-
-> Updates recipient metadata
-
-
-```php
-function updateAutomaticAnticipationSettings(
-        $recipientId,
-        $request,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| request |  ``` Required ```  | Metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-$request = new UpdateAutomaticAnticipationSettingsRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $recipients->updateAutomaticAnticipationSettings($recipientId, $request, $idempotencyKey);
-
-```
-
-
-### <a name="get_anticipation"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getAnticipation") getAnticipation
-
-> Gets an anticipation
-
-
-```php
-function getAnticipation(
-        $recipientId,
-        $anticipationId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| anticipationId |  ``` Required ```  | Anticipation id |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-$anticipationId = 'anticipation_id';
-
-$result = $recipients->getAnticipation($recipientId, $anticipationId);
-
-```
-
-
-### <a name="update_recipient_transfer_settings"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateRecipientTransferSettings") updateRecipientTransferSettings
-
-> TODO: Add a method description
-
-
-```php
-function updateRecipientTransferSettings(
-        $recipientId,
-        $request,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient Identificator |
-| request |  ``` Required ```  | TODO: Add a parameter description |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-$request = new UpdateTransferSettingsRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $recipients->updateRecipientTransferSettings($recipientId, $request, $idempotencyKey);
-
-```
-
-
-### <a name="get_anticipations"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getAnticipations") getAnticipations
-
-> Retrieves a paginated list of anticipations from a recipient
-
-
-```php
-function getAnticipations(
-        $recipientId,
-        $page = null,
-        $size = null,
-        $status = null,
-        $timeframe = null,
-        $paymentDateSince = null,
-        $paymentDateUntil = null,
-        $createdSince = null,
-        $createdUntil = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| status |  ``` Optional ```  | Filter for anticipation status |
-| timeframe |  ``` Optional ```  | Filter for anticipation timeframe |
-| paymentDateSince |  ``` Optional ```  | Filter for start range for anticipation payment date |
-| paymentDateUntil |  ``` Optional ```  | Filter for end range for anticipation payment date |
-| createdSince |  ``` Optional ```  | Filter for start range for anticipation creation date |
-| createdUntil |  ``` Optional ```  | Filter for end range for anticipation creation date |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-$page = 91;
-$size = 91;
-$status = 'status';
-$timeframe = 'timeframe';
-$paymentDateSince = date("D M d, Y G:i");
-$paymentDateUntil = date("D M d, Y G:i");
-$createdSince = date("D M d, Y G:i");
-$createdUntil = date("D M d, Y G:i");
-
-$result = $recipients->getAnticipations($recipientId, $page, $size, $status, $timeframe, $paymentDateSince, $paymentDateUntil, $createdSince, $createdUntil);
-
-```
-
-
-### <a name="get_recipient"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getRecipient") getRecipient
-
-> Retrieves recipient information
-
-
-```php
-function getRecipient($recipientId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipiend id |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-
-$result = $recipients->getRecipient($recipientId);
-
-```
-
-
-### <a name="get_balance"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getBalance") getBalance
-
-> Get balance information for a recipient
-
-
-```php
-function getBalance($recipientId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-
-$result = $recipients->getBalance($recipientId);
-
-```
-
-
-### <a name="get_withdrawals"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getWithdrawals") getWithdrawals
-
-> Gets a paginated list of transfers for the recipient
-
-
-```php
-function getWithdrawals(
-        $recipientId,
-        $page = null,
-        $size = null,
-        $status = null,
-        $createdSince = null,
-        $createdUntil = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | TODO: Add a parameter description |
-| page |  ``` Optional ```  | TODO: Add a parameter description |
-| size |  ``` Optional ```  | TODO: Add a parameter description |
-| status |  ``` Optional ```  | TODO: Add a parameter description |
-| createdSince |  ``` Optional ```  | TODO: Add a parameter description |
-| createdUntil |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-$page = 91;
-$size = 91;
-$status = 'status';
-$createdSince = date("D M d, Y G:i");
-$createdUntil = date("D M d, Y G:i");
-
-$result = $recipients->getWithdrawals($recipientId, $page, $size, $status, $createdSince, $createdUntil);
-
-```
-
-
-### <a name="create_transfer"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createTransfer") createTransfer
-
-> Creates a transfer for a recipient
-
-
-```php
-function createTransfer(
-        $recipientId,
-        $request,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient Id |
-| request |  ``` Required ```  | Transfer data |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$recipientId = 'recipient_id';
-$request = new CreateTransferRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $recipients->createTransfer($recipientId, $request, $idempotencyKey);
-
-```
-
-
-### <a name="create_recipient"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createRecipient") createRecipient
-
-> Creates a new recipient
-
-
-```php
-function createRecipient(
-        $request,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| request |  ``` Required ```  | Recipient data |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$request = new CreateRecipientRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $recipients->createRecipient($request, $idempotencyKey);
-
-```
-
-
-### <a name="get_recipient_by_code"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getRecipientByCode") getRecipientByCode
-
-> Retrieves recipient information
-
-
-```php
-function getRecipientByCode($code)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| code |  ``` Required ```  | Recipient code |
-
-
-
-#### Example Usage
-
-```php
-$code = 'code';
-
-$result = $recipients->getRecipientByCode($code);
-
-```
-
-
-### <a name="get_default_recipient"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getDefaultRecipient") getDefaultRecipient
-
-> TODO: Add a method description
-
-
-```php
-function getDefaultRecipient()
-```
-
-#### Example Usage
-
-```php
-
-$result = $recipients->getDefaultRecipient();
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
 ## <a name="charges_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ChargesController") ChargesController
 
 ### Get singleton instance
@@ -3811,6 +3103,40 @@ $request = new UpdateMetadataRequest();
 $idempotencyKey = 'idempotency-key';
 
 $result = $charges->updateChargeMetadata($chargeId, $request, $idempotencyKey);
+
+```
+
+
+### <a name="capture_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.captureCharge") captureCharge
+
+> Captures a charge
+
+
+```php
+function captureCharge(
+        $chargeId,
+        $request = null,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | Charge id |
+| request |  ``` Optional ```  | Request for capturing a charge |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$chargeId = 'charge_id';
+$request = new CreateCaptureChargeRequest();
+$idempotencyKey = 'idempotency-key';
+
+$result = $charges->captureCharge($chargeId, $request, $idempotencyKey);
 
 ```
 
@@ -3875,8 +3201,8 @@ function getChargeTransactions(
 
 ```php
 $chargeId = 'charge_id';
-$page = 91;
-$size = 91;
+$page = 152;
+$size = 152;
 
 $result = $charges->getChargeTransactions($chargeId, $page, $size);
 
@@ -3954,8 +3280,8 @@ function getCharges(
 #### Example Usage
 
 ```php
-$page = 91;
-$size = 91;
+$page = 152;
+$size = 152;
 $code = 'code';
 $status = 'status';
 $paymentMethod = 'payment_method';
@@ -3965,40 +3291,6 @@ $createdSince = date("D M d, Y G:i");
 $createdUntil = date("D M d, Y G:i");
 
 $result = $charges->getCharges($page, $size, $code, $status, $paymentMethod, $customerId, $orderId, $createdSince, $createdUntil);
-
-```
-
-
-### <a name="capture_charge"></a>![Method: ](https://apidocs.io/img/method.png ".ChargesController.captureCharge") captureCharge
-
-> Captures a charge
-
-
-```php
-function captureCharge(
-        $chargeId,
-        $request = null,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| chargeId |  ``` Required ```  | Charge id |
-| request |  ``` Optional ```  | Request for capturing a charge |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$chargeId = 'charge_id';
-$request = new CreateCaptureChargeRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $charges->captureCharge($chargeId, $request, $idempotencyKey);
 
 ```
 
@@ -4314,6 +3606,713 @@ $result = $transfers->getTransfers();
 
 [Back to List of Controllers](#list_of_controllers)
 
+## <a name="recipients_controller"></a>![Class: ](https://apidocs.io/img/class.png ".RecipientsController") RecipientsController
+
+### Get singleton instance
+
+The singleton instance of the ``` RecipientsController ``` class can be accessed from the API Client.
+
+```php
+$recipients = $client->getRecipients();
+```
+
+### <a name="get_transfer"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getTransfer") getTransfer
+
+> Gets a transfer
+
+
+```php
+function getTransfer(
+        $recipientId,
+        $transferId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| transferId |  ``` Required ```  | Transfer id |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+$transferId = 'transfer_id';
+
+$result = $recipients->getTransfer($recipientId, $transferId);
+
+```
+
+
+### <a name="update_recipient"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateRecipient") updateRecipient
+
+> Updates a recipient
+
+
+```php
+function updateRecipient(
+        $recipientId,
+        $request,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| request |  ``` Required ```  | Recipient data |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+$request = new UpdateRecipientRequest();
+$idempotencyKey = 'idempotency-key';
+
+$result = $recipients->updateRecipient($recipientId, $request, $idempotencyKey);
+
+```
+
+
+### <a name="create_anticipation"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createAnticipation") createAnticipation
+
+> Creates an anticipation
+
+
+```php
+function createAnticipation(
+        $recipientId,
+        $request,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| request |  ``` Required ```  | Anticipation data |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+$request = new CreateAnticipationRequest();
+$idempotencyKey = 'idempotency-key';
+
+$result = $recipients->createAnticipation($recipientId, $request, $idempotencyKey);
+
+```
+
+
+### <a name="get_anticipation_limits"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getAnticipationLimits") getAnticipationLimits
+
+> Gets the anticipation limits for a recipient
+
+
+```php
+function getAnticipationLimits(
+        $recipientId,
+        $timeframe,
+        $paymentDate)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| timeframe |  ``` Required ```  | Timeframe |
+| paymentDate |  ``` Required ```  | Anticipation payment date |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+$timeframe = 'timeframe';
+$paymentDate = date("D M d, Y G:i");
+
+$result = $recipients->getAnticipationLimits($recipientId, $timeframe, $paymentDate);
+
+```
+
+
+### <a name="get_recipients"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getRecipients") getRecipients
+
+> Retrieves paginated recipients information
+
+
+```php
+function getRecipients(
+        $page = null,
+        $size = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+
+#### Example Usage
+
+```php
+$page = 111;
+$size = 111;
+
+$result = $recipients->getRecipients($page, $size);
+
+```
+
+
+### <a name="get_withdraw_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getWithdrawById") getWithdrawById
+
+> TODO: Add a method description
+
+
+```php
+function getWithdrawById(
+        $recipientId,
+        $withdrawalId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | TODO: Add a parameter description |
+| withdrawalId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+$withdrawalId = 'withdrawal_id';
+
+$result = $recipients->getWithdrawById($recipientId, $withdrawalId);
+
+```
+
+
+### <a name="update_recipient_default_bank_account"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateRecipientDefaultBankAccount") updateRecipientDefaultBankAccount
+
+> Updates the default bank account from a recipient
+
+
+```php
+function updateRecipientDefaultBankAccount(
+        $recipientId,
+        $request,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| request |  ``` Required ```  | Bank account data |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+$request = new UpdateRecipientBankAccountRequest();
+$idempotencyKey = 'idempotency-key';
+
+$result = $recipients->updateRecipientDefaultBankAccount($recipientId, $request, $idempotencyKey);
+
+```
+
+
+### <a name="update_recipient_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateRecipientMetadata") updateRecipientMetadata
+
+> Updates recipient metadata
+
+
+```php
+function updateRecipientMetadata(
+        $recipientId,
+        $request,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| request |  ``` Required ```  | Metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+$request = new UpdateMetadataRequest();
+$idempotencyKey = 'idempotency-key';
+
+$result = $recipients->updateRecipientMetadata($recipientId, $request, $idempotencyKey);
+
+```
+
+
+### <a name="get_transfers"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getTransfers") getTransfers
+
+> Gets a paginated list of transfers for the recipient
+
+
+```php
+function getTransfers(
+        $recipientId,
+        $page = null,
+        $size = null,
+        $status = null,
+        $createdSince = null,
+        $createdUntil = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| status |  ``` Optional ```  | Filter for transfer status |
+| createdSince |  ``` Optional ```  | Filter for start range of transfer creation date |
+| createdUntil |  ``` Optional ```  | Filter for end range of transfer creation date |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+$page = 111;
+$size = 111;
+$status = 'status';
+$createdSince = date("D M d, Y G:i");
+$createdUntil = date("D M d, Y G:i");
+
+$result = $recipients->getTransfers($recipientId, $page, $size, $status, $createdSince, $createdUntil);
+
+```
+
+
+### <a name="create_withdraw"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createWithdraw") createWithdraw
+
+> TODO: Add a method description
+
+
+```php
+function createWithdraw(
+        $recipientId,
+        $request)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | TODO: Add a parameter description |
+| request |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+$request = new CreateWithdrawRequest();
+
+$result = $recipients->createWithdraw($recipientId, $request);
+
+```
+
+
+### <a name="update_automatic_anticipation_settings"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateAutomaticAnticipationSettings") updateAutomaticAnticipationSettings
+
+> Updates recipient metadata
+
+
+```php
+function updateAutomaticAnticipationSettings(
+        $recipientId,
+        $request,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| request |  ``` Required ```  | Metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+$request = new UpdateAutomaticAnticipationSettingsRequest();
+$idempotencyKey = 'idempotency-key';
+
+$result = $recipients->updateAutomaticAnticipationSettings($recipientId, $request, $idempotencyKey);
+
+```
+
+
+### <a name="get_anticipation"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getAnticipation") getAnticipation
+
+> Gets an anticipation
+
+
+```php
+function getAnticipation(
+        $recipientId,
+        $anticipationId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| anticipationId |  ``` Required ```  | Anticipation id |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+$anticipationId = 'anticipation_id';
+
+$result = $recipients->getAnticipation($recipientId, $anticipationId);
+
+```
+
+
+### <a name="update_recipient_transfer_settings"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.updateRecipientTransferSettings") updateRecipientTransferSettings
+
+> TODO: Add a method description
+
+
+```php
+function updateRecipientTransferSettings(
+        $recipientId,
+        $request,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient Identificator |
+| request |  ``` Required ```  | TODO: Add a parameter description |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+$request = new UpdateTransferSettingsRequest();
+$idempotencyKey = 'idempotency-key';
+
+$result = $recipients->updateRecipientTransferSettings($recipientId, $request, $idempotencyKey);
+
+```
+
+
+### <a name="get_anticipations"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getAnticipations") getAnticipations
+
+> Retrieves a paginated list of anticipations from a recipient
+
+
+```php
+function getAnticipations(
+        $recipientId,
+        $page = null,
+        $size = null,
+        $status = null,
+        $timeframe = null,
+        $paymentDateSince = null,
+        $paymentDateUntil = null,
+        $createdSince = null,
+        $createdUntil = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| status |  ``` Optional ```  | Filter for anticipation status |
+| timeframe |  ``` Optional ```  | Filter for anticipation timeframe |
+| paymentDateSince |  ``` Optional ```  | Filter for start range for anticipation payment date |
+| paymentDateUntil |  ``` Optional ```  | Filter for end range for anticipation payment date |
+| createdSince |  ``` Optional ```  | Filter for start range for anticipation creation date |
+| createdUntil |  ``` Optional ```  | Filter for end range for anticipation creation date |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+$page = 111;
+$size = 111;
+$status = 'status';
+$timeframe = 'timeframe';
+$paymentDateSince = date("D M d, Y G:i");
+$paymentDateUntil = date("D M d, Y G:i");
+$createdSince = date("D M d, Y G:i");
+$createdUntil = date("D M d, Y G:i");
+
+$result = $recipients->getAnticipations($recipientId, $page, $size, $status, $timeframe, $paymentDateSince, $paymentDateUntil, $createdSince, $createdUntil);
+
+```
+
+
+### <a name="get_recipient"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getRecipient") getRecipient
+
+> Retrieves recipient information
+
+
+```php
+function getRecipient($recipientId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipiend id |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+
+$result = $recipients->getRecipient($recipientId);
+
+```
+
+
+### <a name="get_withdrawals"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getWithdrawals") getWithdrawals
+
+> Gets a paginated list of transfers for the recipient
+
+
+```php
+function getWithdrawals(
+        $recipientId,
+        $page = null,
+        $size = null,
+        $status = null,
+        $createdSince = null,
+        $createdUntil = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | TODO: Add a parameter description |
+| page |  ``` Optional ```  | TODO: Add a parameter description |
+| size |  ``` Optional ```  | TODO: Add a parameter description |
+| status |  ``` Optional ```  | TODO: Add a parameter description |
+| createdSince |  ``` Optional ```  | TODO: Add a parameter description |
+| createdUntil |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+$page = 111;
+$size = 111;
+$status = 'status';
+$createdSince = date("D M d, Y G:i");
+$createdUntil = date("D M d, Y G:i");
+
+$result = $recipients->getWithdrawals($recipientId, $page, $size, $status, $createdSince, $createdUntil);
+
+```
+
+
+### <a name="get_balance"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getBalance") getBalance
+
+> Get balance information for a recipient
+
+
+```php
+function getBalance($recipientId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+
+$result = $recipients->getBalance($recipientId);
+
+```
+
+
+### <a name="create_transfer"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createTransfer") createTransfer
+
+> Creates a transfer for a recipient
+
+
+```php
+function createTransfer(
+        $recipientId,
+        $request,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient Id |
+| request |  ``` Required ```  | Transfer data |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$recipientId = 'recipient_id';
+$request = new CreateTransferRequest();
+$idempotencyKey = 'idempotency-key';
+
+$result = $recipients->createTransfer($recipientId, $request, $idempotencyKey);
+
+```
+
+
+### <a name="create_recipient"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.createRecipient") createRecipient
+
+> Creates a new recipient
+
+
+```php
+function createRecipient(
+        $request,
+        $idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| request |  ``` Required ```  | Recipient data |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$request = new CreateRecipientRequest();
+$idempotencyKey = 'idempotency-key';
+
+$result = $recipients->createRecipient($request, $idempotencyKey);
+
+```
+
+
+### <a name="get_recipient_by_code"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getRecipientByCode") getRecipientByCode
+
+> Retrieves recipient information
+
+
+```php
+function getRecipientByCode($code)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| code |  ``` Required ```  | Recipient code |
+
+
+
+#### Example Usage
+
+```php
+$code = 'code';
+
+$result = $recipients->getRecipientByCode($code);
+
+```
+
+
+### <a name="get_default_recipient"></a>![Method: ](https://apidocs.io/img/method.png ".RecipientsController.getDefaultRecipient") getDefaultRecipient
+
+> TODO: Add a method description
+
+
+```php
+function getDefaultRecipient()
+```
+
+#### Example Usage
+
+```php
+
+$result = $recipients->getDefaultRecipient();
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
 ## <a name="tokens_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TokensController") TokensController
 
 ### Get singleton instance
@@ -4389,227 +4388,6 @@ $id = 'id';
 $publicKey = 'public_key';
 
 $result = $tokens->getToken($id, $publicKey);
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="sellers_controller"></a>![Class: ](https://apidocs.io/img/class.png ".SellersController") SellersController
-
-### Get singleton instance
-
-The singleton instance of the ``` SellersController ``` class can be accessed from the API Client.
-
-```php
-$sellers = $client->getSellers();
-```
-
-### <a name="create_seller"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.createSeller") createSeller
-
-> TODO: Add a method description
-
-
-```php
-function createSeller(
-        $request,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| request |  ``` Required ```  | Seller Model |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$request = new CreateSellerRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $sellers->createSeller($request, $idempotencyKey);
-
-```
-
-
-### <a name="update_seller_metadata"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.updateSellerMetadata") updateSellerMetadata
-
-> TODO: Add a method description
-
-
-```php
-function updateSellerMetadata(
-        $sellerId,
-        $request,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| sellerId |  ``` Required ```  | Seller Id |
-| request |  ``` Required ```  | Request for updating the charge metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$sellerId = 'seller_id';
-$request = new UpdateMetadataRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $sellers->updateSellerMetadata($sellerId, $request, $idempotencyKey);
-
-```
-
-
-### <a name="update_seller"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.updateSeller") updateSeller
-
-> TODO: Add a method description
-
-
-```php
-function updateSeller(
-        $id,
-        $request,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | TODO: Add a parameter description |
-| request |  ``` Required ```  | Update Seller model |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$id = 'id';
-$request = new UpdateSellerRequest();
-$idempotencyKey = 'idempotency-key';
-
-$result = $sellers->updateSeller($id, $request, $idempotencyKey);
-
-```
-
-
-### <a name="delete_seller"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.deleteSeller") deleteSeller
-
-> TODO: Add a method description
-
-
-```php
-function deleteSeller(
-        $sellerId,
-        $idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| sellerId |  ``` Required ```  | Seller Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$sellerId = 'sellerId';
-$idempotencyKey = 'idempotency-key';
-
-$result = $sellers->deleteSeller($sellerId, $idempotencyKey);
-
-```
-
-
-### <a name="get_seller_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.getSellerById") getSellerById
-
-> TODO: Add a method description
-
-
-```php
-function getSellerById($id)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | Seller Id |
-
-
-
-#### Example Usage
-
-```php
-$id = 'id';
-
-$result = $sellers->getSellerById($id);
-
-```
-
-
-### <a name="get_sellers"></a>![Method: ](https://apidocs.io/img/method.png ".SellersController.getSellers") getSellers
-
-> TODO: Add a method description
-
-
-```php
-function getSellers(
-        $page = null,
-        $size = null,
-        $name = null,
-        $document = null,
-        $code = null,
-        $status = null,
-        $type = null,
-        $createdSince = null,
-        $createdUntil = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| name |  ``` Optional ```  | TODO: Add a parameter description |
-| document |  ``` Optional ```  | TODO: Add a parameter description |
-| code |  ``` Optional ```  | TODO: Add a parameter description |
-| status |  ``` Optional ```  | TODO: Add a parameter description |
-| type |  ``` Optional ```  | TODO: Add a parameter description |
-| createdSince |  ``` Optional ```  | TODO: Add a parameter description |
-| createdUntil |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$page = 183;
-$size = 183;
-$name = 'name';
-$document = 'document';
-$code = 'code';
-$status = 'status';
-$type = 'type';
-$createdSince = date("D M d, Y G:i");
-$createdUntil = date("D M d, Y G:i");
-
-$result = $sellers->getSellers($page, $size, $name, $document, $code, $status, $type, $createdSince, $createdUntil);
 
 ```
 
