@@ -43,19 +43,28 @@ class CreateSplitRequest implements JsonSerializable
     public $options;
 
     /**
+     * Rule code used in cancellation.
+     * @maps split_rule_id
+     * @var string|null $splitRuleId public property
+     */
+    public $splitRuleId;
+
+    /**
      * Constructor to set initial or default values of member properties
      * @param string                    $type        Initialization value for $this->type
      * @param integer                   $amount      Initialization value for $this->amount
      * @param string                    $recipientId Initialization value for $this->recipientId
      * @param CreateSplitOptionsRequest $options     Initialization value for $this->options
+     * @param string                    $splitRuleId Initialization value for $this->splitRuleId
      */
     public function __construct()
     {
-        if (4 == func_num_args()) {
+        if (5 == func_num_args()) {
             $this->type        = func_get_arg(0);
             $this->amount      = func_get_arg(1);
             $this->recipientId = func_get_arg(2);
             $this->options     = func_get_arg(3);
+            $this->splitRuleId = func_get_arg(4);
         }
     }
 
@@ -66,10 +75,11 @@ class CreateSplitRequest implements JsonSerializable
     public function jsonSerialize()
     {
         $json = array();
-        $json['type']         = $this->type;
-        $json['amount']       = $this->amount;
-        $json['recipient_id'] = $this->recipientId;
-        $json['options']      = $this->options;
+        $json['type']          = $this->type;
+        $json['amount']        = $this->amount;
+        $json['recipient_id']  = $this->recipientId;
+        $json['options']       = $this->options;
+        $json['split_rule_id'] = $this->splitRuleId;
 
         return $json;
     }
