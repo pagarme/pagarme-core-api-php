@@ -52,19 +52,36 @@ class GetPixTransactionResponse extends GetTransactionResponse implements JsonSe
     public $additionalInformation;
 
     /**
+     * @todo Write general description for this property
+     * @maps end_to_end_id
+     * @var string|null $endToEndId public property
+     */
+    public $endToEndId;
+
+    /**
+     * @todo Write general description for this property
+     * @var \PagarmeCoreApiLib\Models\GetPixPayerResponse|null $payer public property
+     */
+    public $payer;
+
+    /**
      * Constructor to set initial or default values of member properties
-     * @param string    $qrCode                Initialization value for $this->qrCode
-     * @param string    $qrCodeUrl             Initialization value for $this->qrCodeUrl
-     * @param \DateTime $expiresAt             Initialization value for $this->expiresAt
-     * @param array     $additionalInformation Initialization value for $this->additionalInformation
+     * @param string               $qrCode                Initialization value for $this->qrCode
+     * @param string               $qrCodeUrl             Initialization value for $this->qrCodeUrl
+     * @param \DateTime            $expiresAt             Initialization value for $this->expiresAt
+     * @param array                $additionalInformation Initialization value for $this->additionalInformation
+     * @param string               $endToEndId            Initialization value for $this->endToEndId
+     * @param GetPixPayerResponse  $payer                 Initialization value for $this->payer
      */
     public function __construct()
     {
-        if (4 == func_num_args()) {
+        if (6 == func_num_args()) {
             $this->qrCode                = func_get_arg(0);
             $this->qrCodeUrl             = func_get_arg(1);
             $this->expiresAt             = func_get_arg(2);
             $this->additionalInformation = func_get_arg(3);
+            $this->endToEndId            = func_get_arg(4);
+            $this->payer                 = func_get_arg(5);
         }
     }
 
@@ -79,6 +96,8 @@ class GetPixTransactionResponse extends GetTransactionResponse implements JsonSe
         $json['qr_code_url']            = $this->qrCodeUrl;
         $json['expires_at']             = DateTimeHelper::toRfc3339DateTime($this->expiresAt);
         $json['additional_information'] = $this->additionalInformation;
+        $json['end_to_end_id']          = $this->endToEndId;
+        $json['payer']                  = $this->payer;
         $json = array_merge($json, parent::jsonSerialize());
 
         return $json;
