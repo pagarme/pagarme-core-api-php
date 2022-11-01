@@ -83,13 +83,13 @@ class CreateBoletoPaymentRequest implements JsonSerializable
      */
     public $statementDescriptor;
 
-	/**
-	 * Boleto Type
-	 * @required
-	 * @maps type
-	 * @var string $type public property
-	 */
-	public $type;
+     /**
+     * Boleto Type
+     * @required
+     * @maps type
+     * @var string $type public property
+     */
+    public $type;
 
     /**
      * Constructor to set initial or default values of member properties
@@ -116,7 +116,7 @@ class CreateBoletoPaymentRequest implements JsonSerializable
             $this->nossoNumero         = func_get_arg(6);
             $this->documentNumber      = func_get_arg(7);
             $this->statementDescriptor = func_get_arg(8);
-	        $this->type                = func_get_arg(9);
+	    $this->type                = func_get_arg(9);
         }
     }
 
@@ -137,7 +137,7 @@ class CreateBoletoPaymentRequest implements JsonSerializable
         $json['nosso_numero']         = $this->nossoNumero;
         $json['document_number']      = $this->documentNumber;
         $json['statement_descriptor'] = $this->statementDescriptor;
-	    $json['type']                 = $this->type;
+	$json['type']                 = $this->type;
 
         return $json;
     }
