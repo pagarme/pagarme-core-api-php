@@ -55,7 +55,7 @@ class GetSubscriptionItemResponse implements JsonSerializable
     public $updatedAt;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a pricing scheme
      * @required
      * @maps pricing_scheme
      * @var \PagarmeCoreApiLib\Models\GetPricingSchemeResponse $pricingScheme public property

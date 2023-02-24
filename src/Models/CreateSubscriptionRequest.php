@@ -16,14 +16,14 @@ use PagarmeCoreApiLib\Utils\DateTimeHelper;
 class CreateSubscriptionRequest implements JsonSerializable
 {
     /**
-     * Customer
+     * Request for creating a new customer
      * @required
      * @var \PagarmeCoreApiLib\Models\CreateCustomerRequest $customer public property
      */
     public $customer;
 
     /**
-     * Card
+     * Card data
      * @required
      * @var \PagarmeCoreApiLib\Models\CreateCardRequest $card public property
      */
@@ -90,7 +90,7 @@ class CreateSubscriptionRequest implements JsonSerializable
     public $intervalCount;
 
     /**
-     * Subscription pricing scheme
+     * Request for creating a pricing scheme
      * @required
      * @maps pricing_scheme
      * @var \PagarmeCoreApiLib\Models\CreatePricingSchemeRequest $pricingScheme public property
@@ -105,7 +105,7 @@ class CreateSubscriptionRequest implements JsonSerializable
     public $items;
 
     /**
-     * Shipping
+     * Shipping data
      * @required
      * @var \PagarmeCoreApiLib\Models\CreateShippingRequest $shipping public property
      */
@@ -126,7 +126,8 @@ class CreateSubscriptionRequest implements JsonSerializable
     public $metadata;
 
     /**
-     * Setup data
+     * Request for creating a Setup for a subscription. The setup is an order that will be created at the
+     * subscription creation.
      * @required
      * @var \PagarmeCoreApiLib\Models\CreateSetupRequest $setup public property
      */
@@ -234,7 +235,7 @@ class CreateSubscriptionRequest implements JsonSerializable
     public $submerchant;
 
     /**
-     * Subscription's split
+     * @todo Write general description for this property
      * @var \PagarmeCoreApiLib\Models\CreateSubscriptionSplitRequest|null $split public property
      */
     public $split;

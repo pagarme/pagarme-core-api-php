@@ -23,21 +23,21 @@ class CreatePaymentRequest implements JsonSerializable
     public $paymentMethod;
 
     /**
-     * Settings for credit card payment
+     * The settings for creating a credit card payment
      * @maps credit_card
      * @var \PagarmeCoreApiLib\Models\CreateCreditCardPaymentRequest|null $creditCard public property
      */
     public $creditCard;
 
     /**
-     * Settings for debit card payment
+     * The settings for creating a debit card payment
      * @maps debit_card
      * @var \PagarmeCoreApiLib\Models\CreateDebitCardPaymentRequest|null $debitCard public property
      */
     public $debitCard;
 
     /**
-     * Settings for boleto payment
+     * Contains the settings for creating a boleto payment
      * @var \PagarmeCoreApiLib\Models\CreateBoletoPaymentRequest|null $boleto public property
      */
     public $boleto;
@@ -49,7 +49,7 @@ class CreatePaymentRequest implements JsonSerializable
     public $currency;
 
     /**
-     * Settings for voucher payment
+     * The settings for creating a voucher payment
      * @var \PagarmeCoreApiLib\Models\CreateVoucherPaymentRequest|null $voucher public property
      */
     public $voucher;
@@ -61,7 +61,7 @@ class CreatePaymentRequest implements JsonSerializable
     public $split;
 
     /**
-     * Settings for bank transfer payment
+     * Request for creating a bank transfer payment
      * @maps bank_transfer
      * @var \PagarmeCoreApiLib\Models\CreateBankTransferPaymentRequest|null $bankTransfer public property
      */
@@ -81,7 +81,7 @@ class CreatePaymentRequest implements JsonSerializable
     public $amount;
 
     /**
-     * Settings for checkout payment
+     * Checkout payment request
      * @var \PagarmeCoreApiLib\Models\CreateCheckoutPaymentRequest|null $checkout public property
      */
     public $checkout;
@@ -94,7 +94,7 @@ class CreatePaymentRequest implements JsonSerializable
     public $customerId;
 
     /**
-     * Customer
+     * Request for creating a new customer
      * @var \PagarmeCoreApiLib\Models\CreateCustomerRequest|null $customer public property
      */
     public $customer;
@@ -106,13 +106,13 @@ class CreatePaymentRequest implements JsonSerializable
     public $metadata;
 
     /**
-     * Settings for cash payment
+     * @todo Write general description for this property
      * @var \PagarmeCoreApiLib\Models\CreateCashPaymentRequest|null $cash public property
      */
     public $cash;
 
     /**
-     * Settings for private label payment
+     * The settings for creating a private label payment
      * @required
      * @maps private_label
      * @var \PagarmeCoreApiLib\Models\CreatePrivateLabelPaymentRequest $privateLabel public property
@@ -120,7 +120,7 @@ class CreatePaymentRequest implements JsonSerializable
     public $privateLabel;
 
     /**
-     * Settings for pix payment
+     * Contains information to create a pix payment
      * @var \PagarmeCoreApiLib\Models\CreatePixPaymentRequest|null $pix public property
      */
     public $pix;

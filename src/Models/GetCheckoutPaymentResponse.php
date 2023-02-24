@@ -118,20 +118,20 @@ class GetCheckoutPaymentResponse implements JsonSerializable
     public $customerEditable;
 
     /**
-     * Dados do comprador
+     * Response object for getting a customer
      * @var \PagarmeCoreApiLib\Models\GetCustomerResponse|null $customer public property
      */
     public $customer;
 
     /**
-     * Dados do endereço de cobrança
+     * Response object for getting an Address
      * @required
      * @var \PagarmeCoreApiLib\Models\GetAddressResponse $billingaddress public property
      */
     public $billingaddress;
 
     /**
-     * Configurações de cartão de crédito
+     * @todo Write general description for this property
      * @required
      * @maps credit_card
      * @var \PagarmeCoreApiLib\Models\GetCheckoutCreditCardPaymentResponse $creditCard public property
@@ -139,7 +139,7 @@ class GetCheckoutPaymentResponse implements JsonSerializable
     public $creditCard;
 
     /**
-     * Configurações de boleto
+     * @todo Write general description for this property
      * @required
      * @var \PagarmeCoreApiLib\Models\GetCheckoutBoletoPaymentResponse $boleto public property
      */
@@ -154,7 +154,7 @@ class GetCheckoutPaymentResponse implements JsonSerializable
     public $billingAddressEditable;
 
     /**
-     * Configurações  de entrega
+     * Response object for getting the shipping data
      * @required
      * @var \PagarmeCoreApiLib\Models\GetShippingResponse $shipping public property
      */
@@ -191,14 +191,14 @@ class GetCheckoutPaymentResponse implements JsonSerializable
     public $currency;
 
     /**
-     * Configurações de cartão de débito
+     * @todo Write general description for this property
      * @maps debit_card
      * @var \PagarmeCoreApiLib\Models\GetCheckoutDebitCardPaymentResponse|null $debitCard public property
      */
     public $debitCard;
 
     /**
-     * Bank transfer payment response
+     * Bank transfer checkout response
      * @maps bank_transfer
      * @var \PagarmeCoreApiLib\Models\GetCheckoutBankTransferPaymentResponse|null $bankTransfer public property
      */
@@ -213,7 +213,7 @@ class GetCheckoutPaymentResponse implements JsonSerializable
     public $acceptedBrands;
 
     /**
-     * Pix payment response
+     * Checkout pix payment response
      * @var \PagarmeCoreApiLib\Models\GetCheckoutPixPaymentResponse|null $pix public property
      */
     public $pix;

@@ -84,7 +84,7 @@ class GetCustomerResponse implements JsonSerializable
     public $fbAccessToken;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting an Address
      * @required
      * @var \PagarmeCoreApiLib\Models\GetAddressResponse $address public property
      */

@@ -22,7 +22,7 @@ class CreateDebitCardPaymentRequest implements JsonSerializable
     public $statementDescriptor;
 
     /**
-     * Debit card data
+     * Card data
      * @var \PagarmeCoreApiLib\Models\CreateCardRequest|null $card public property
      */
     public $card;
@@ -54,7 +54,7 @@ class CreateDebitCardPaymentRequest implements JsonSerializable
     public $authentication;
 
     /**
-     * The Debit card payment token request
+     * The card payment contactless request
      * @var \PagarmeCoreApiLib\Models\CreateCardPaymentContactlessRequest|null $token public property
      */
     public $token;

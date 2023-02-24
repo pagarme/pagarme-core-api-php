@@ -29,7 +29,7 @@ class UpdateSubscriptionItemRequest implements JsonSerializable
     public $status;
 
     /**
-     * Pricing scheme
+     * Request for updating a pricing scheme
      * @required
      * @maps pricing_scheme
      * @var \PagarmeCoreApiLib\Models\UpdatePricingSchemeRequest $pricingScheme public property

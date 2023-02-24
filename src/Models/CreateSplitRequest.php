@@ -37,7 +37,7 @@ class CreateSplitRequest implements JsonSerializable
     public $recipientId;
 
     /**
-     * The split options request
+     * The Split Options Request
      * @var \PagarmeCoreApiLib\Models\CreateSplitOptionsRequest|null $options public property
      */
     public $options;

@@ -46,7 +46,7 @@ class GetShippingResponse implements JsonSerializable
     public $recipientPhone;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting an Address
      * @required
      * @var \PagarmeCoreApiLib\Models\GetAddressResponse $address public property
      */

@@ -47,7 +47,7 @@ class UpdateCardRequest implements JsonSerializable
     public $billingAddressId;
 
     /**
-     * Billing address
+     * Request for creating a new Address
      * @required
      * @maps billing_address
      * @var \PagarmeCoreApiLib\Models\CreateAddressRequest $billingAddress public property

@@ -119,7 +119,7 @@ class GetBankAccountResponse implements JsonSerializable
     public $deletedAt;
 
     /**
-     * Recipient
+     * Recipient response
      * @var \PagarmeCoreApiLib\Models\GetRecipientResponse|null $recipient public property
      */
     public $recipient;

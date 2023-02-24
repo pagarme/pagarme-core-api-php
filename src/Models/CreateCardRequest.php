@@ -53,7 +53,7 @@ class CreateCardRequest implements JsonSerializable
     public $cvv;
 
     /**
-     * Card's billing address
+     * Request for creating a new Address
      * @required
      * @maps billing_address
      * @var \PagarmeCoreApiLib\Models\CreateAddressRequest $billingAddress public property
@@ -151,29 +151,23 @@ class CreateCardRequest implements JsonSerializable
      */
     public function __construct()
     {
-        switch (func_num_args()) {
-            case 16:
-                $this->number           = func_get_arg(0);
-                $this->holderName       = func_get_arg(1);
-                $this->expMonth         = func_get_arg(2);
-                $this->expYear          = func_get_arg(3);
-                $this->cvv              = func_get_arg(4);
-                $this->billingAddress   = func_get_arg(5);
-                $this->brand            = func_get_arg(6);
-                $this->billingAddressId = func_get_arg(7);
-                $this->metadata         = func_get_arg(8);
-                $this->type             = func_get_arg(9);
-                $this->options          = func_get_arg(10);
-                $this->holderDocument   = func_get_arg(11);
-                $this->privateLabel     = func_get_arg(12);
-                $this->label            = func_get_arg(13);
-                $this->id               = func_get_arg(14);
-                $this->token            = func_get_arg(15);
-                break;
-
-            default:
-                $this->type = 'credit';
-                break;
+        if (16 == func_num_args()) {
+            $this->number           = func_get_arg(0);
+            $this->holderName       = func_get_arg(1);
+            $this->expMonth         = func_get_arg(2);
+            $this->expYear          = func_get_arg(3);
+            $this->cvv              = func_get_arg(4);
+            $this->billingAddress   = func_get_arg(5);
+            $this->brand            = func_get_arg(6);
+            $this->billingAddressId = func_get_arg(7);
+            $this->metadata         = func_get_arg(8);
+            $this->type             = func_get_arg(9);
+            $this->options          = func_get_arg(10);
+            $this->holderDocument   = func_get_arg(11);
+            $this->privateLabel     = func_get_arg(12);
+            $this->label            = func_get_arg(13);
+            $this->id               = func_get_arg(14);
+            $this->token            = func_get_arg(15);
         }
     }
 

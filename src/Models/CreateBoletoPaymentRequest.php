@@ -45,7 +45,7 @@ class CreateBoletoPaymentRequest implements JsonSerializable
     public $dueAt;
 
     /**
-     * Card's billing address
+     * Request for creating a new Address
      * @required
      * @maps billing_address
      * @var \PagarmeCoreApiLib\Models\CreateAddressRequest $billingAddress public property
@@ -84,13 +84,13 @@ class CreateBoletoPaymentRequest implements JsonSerializable
     public $statementDescriptor;
 
     /**
-     * @todo Write general description for this property
+     * Interest Request
      * @var \PagarmeCoreApiLib\Models\CreateInterestRequest|null $interest public property
      */
     public $interest;
 
     /**
-     * @todo Write general description for this property
+     * Fine Request
      * @var \PagarmeCoreApiLib\Models\CreateFineRequest|null $fine public property
      */
     public $fine;

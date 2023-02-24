@@ -59,8 +59,9 @@ class GetPixTransactionResponse extends GetTransactionResponse implements JsonSe
     public $endToEndId;
 
     /**
-     * @todo Write general description for this property
-     * @var \PagarmeCoreApiLib\Models\GetPixPayerResponse|null $payer public property
+     * Pix payer data.
+     * @required
+     * @var \PagarmeCoreApiLib\Models\GetPixPayerResponse $payer public property
      */
     public $payer;
 

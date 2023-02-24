@@ -39,7 +39,7 @@ class UpdateCustomerRequest implements JsonSerializable
     public $type;
 
     /**
-     * Address
+     * Request for creating a new Address
      * @var \PagarmeCoreApiLib\Models\CreateAddressRequest|null $address public property
      */
     public $address;

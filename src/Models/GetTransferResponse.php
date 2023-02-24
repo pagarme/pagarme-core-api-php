@@ -55,7 +55,7 @@ class GetTransferResponse implements JsonSerializable
     public $updatedAt;
 
     /**
-     * Bank account
+     * @todo Write general description for this property
      * @required
      * @maps bank_account
      * @var \PagarmeCoreApiLib\Models\GetBankAccountResponse $bankAccount public property

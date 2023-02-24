@@ -29,7 +29,7 @@ class GetSplitResponse implements JsonSerializable
     public $amount;
 
     /**
-     * Recipient
+     * Recipient response
      * @var \PagarmeCoreApiLib\Models\GetRecipientResponse|null $recipient public property
      */
     public $recipient;

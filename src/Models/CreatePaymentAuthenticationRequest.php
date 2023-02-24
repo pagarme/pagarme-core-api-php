@@ -22,7 +22,7 @@ class CreatePaymentAuthenticationRequest implements JsonSerializable
     public $type;
 
     /**
-     * The 3D-S authentication object
+     * Creates a 3D-S authentication payment
      * @required
      * @maps threed_secure
      * @var \PagarmeCoreApiLib\Models\CreateThreeDSecureRequest $threedSecure public property

@@ -74,7 +74,7 @@ class GetCreditCardTransactionResponse extends GetTransactionResponse implements
     public $operationType;
 
     /**
-     * Card data
+     * Response object for getting a credit card
      * @required
      * @var \PagarmeCoreApiLib\Models\GetCardResponse $card public property
      */

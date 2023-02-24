@@ -22,7 +22,7 @@ class CreatePlanItemRequest implements JsonSerializable
     public $name;
 
     /**
-     * Item's pricing scheme
+     * Request for creating a pricing scheme
      * @required
      * @maps pricing_scheme
      * @var \PagarmeCoreApiLib\Models\CreatePricingSchemeRequest $pricingScheme public property

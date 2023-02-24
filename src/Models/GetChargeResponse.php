@@ -94,26 +94,26 @@ class GetChargeResponse implements JsonSerializable
     public $updatedAt;
 
     /**
-     * @todo Write general description for this property
+     * Generic response object for getting a transaction.
      * @maps last_transaction
      * @var \PagarmeCoreApiLib\Models\GetTransactionResponse|null $lastTransaction public property
      */
     public $lastTransaction;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting an invoice
      * @var \PagarmeCoreApiLib\Models\GetInvoiceResponse|null $invoice public property
      */
     public $invoice;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting an Order
      * @var \PagarmeCoreApiLib\Models\GetOrderResponse|null $order public property
      */
     public $order;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a customer
      * @var \PagarmeCoreApiLib\Models\GetCustomerResponse|null $customer public property
      */
     public $customer;

@@ -75,13 +75,13 @@ class GetInvoiceResponse implements JsonSerializable
     public $items;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a customer
      * @var \PagarmeCoreApiLib\Models\GetCustomerResponse|null $customer public property
      */
     public $customer;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a charge
      * @required
      * @var \PagarmeCoreApiLib\Models\GetChargeResponse $charge public property
      */
@@ -95,7 +95,7 @@ class GetInvoiceResponse implements JsonSerializable
     public $installments;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a billing address
      * @required
      * @maps billing_address
      * @var \PagarmeCoreApiLib\Models\GetBillingAddressResponse $billingAddress public property
@@ -110,13 +110,13 @@ class GetInvoiceResponse implements JsonSerializable
     public $subscription;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a period
      * @var \PagarmeCoreApiLib\Models\GetPeriodResponse|null $cycle public property
      */
     public $cycle;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting the shipping data
      * @required
      * @var \PagarmeCoreApiLib\Models\GetShippingResponse $shipping public property
      */

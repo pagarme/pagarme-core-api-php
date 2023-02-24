@@ -111,7 +111,7 @@ class GetTransactionResponse implements JsonSerializable
     public $id;
 
     /**
-     * The Gateway Response
+     * The Transaction Gateway Response
      * @required
      * @maps gateway_response
      * @var \PagarmeCoreApiLib\Models\GetGatewayResponseResponse $gatewayResponse public property
@@ -140,13 +140,13 @@ class GetTransactionResponse implements JsonSerializable
     public $split;
 
     /**
-     * @todo Write general description for this property
+     * Interest response
      * @var \PagarmeCoreApiLib\Models\GetInterestResponse|null $interest public property
      */
     public $interest;
 
     /**
-     * @todo Write general description for this property
+     * Fine Response
      * @var \PagarmeCoreApiLib\Models\GetFineResponse|null $fine public property
      */
     public $fine;

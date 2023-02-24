@@ -31,7 +31,7 @@ class UpdateChargePaymentMethodRequest implements JsonSerializable
     public $paymentMethod;
 
     /**
-     * Credit card data
+     * The settings for creating a credit card payment
      * @required
      * @maps credit_card
      * @var \PagarmeCoreApiLib\Models\CreateCreditCardPaymentRequest $creditCard public property
@@ -39,7 +39,7 @@ class UpdateChargePaymentMethodRequest implements JsonSerializable
     public $creditCard;
 
     /**
-     * Debit card data
+     * The settings for creating a debit card payment
      * @required
      * @maps debit_card
      * @var \PagarmeCoreApiLib\Models\CreateDebitCardPaymentRequest $debitCard public property
@@ -47,28 +47,28 @@ class UpdateChargePaymentMethodRequest implements JsonSerializable
     public $debitCard;
 
     /**
-     * Boleto data
+     * Contains the settings for creating a boleto payment
      * @required
      * @var \PagarmeCoreApiLib\Models\CreateBoletoPaymentRequest $boleto public property
      */
     public $boleto;
 
     /**
-     * Voucher data
+     * The settings for creating a voucher payment
      * @required
      * @var \PagarmeCoreApiLib\Models\CreateVoucherPaymentRequest $voucher public property
      */
     public $voucher;
 
     /**
-     * Cash data
+     * @todo Write general description for this property
      * @required
      * @var \PagarmeCoreApiLib\Models\CreateCashPaymentRequest $cash public property
      */
     public $cash;
 
     /**
-     * Bank Transfer data
+     * Request for creating a bank transfer payment
      * @required
      * @maps bank_transfer
      * @var \PagarmeCoreApiLib\Models\CreateBankTransferPaymentRequest $bankTransfer public property
@@ -76,7 +76,7 @@ class UpdateChargePaymentMethodRequest implements JsonSerializable
     public $bankTransfer;
 
     /**
-     * @todo Write general description for this property
+     * The settings for creating a private label payment
      * @required
      * @maps private_label
      * @var \PagarmeCoreApiLib\Models\CreatePrivateLabelPaymentRequest $privateLabel public property

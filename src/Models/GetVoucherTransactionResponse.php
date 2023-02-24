@@ -90,7 +90,7 @@ class GetVoucherTransactionResponse extends GetTransactionResponse implements Js
     public $operationType;
 
     /**
-     * Card data
+     * Response object for getting a credit card
      * @required
      * @var \PagarmeCoreApiLib\Models\GetCardResponse $card public property
      */

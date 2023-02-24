@@ -36,7 +36,7 @@ class CreateVoucherPaymentRequest implements JsonSerializable
     public $cardToken;
 
     /**
-     * Card info
+     * Card data
      * @maps Card
      * @var \PagarmeCoreApiLib\Models\CreateCardRequest|null $card public property
      */

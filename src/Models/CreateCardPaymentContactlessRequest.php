@@ -22,21 +22,21 @@ class CreateCardPaymentContactlessRequest implements JsonSerializable
     public $type;
 
     /**
-     * The ApplePay encrypted request
+     * The ApplePay Token Payment Request
      * @maps apple_pay
      * @var \PagarmeCoreApiLib\Models\CreateApplePayRequest|null $applePay public property
      */
     public $applePay;
 
     /**
-     * The GooglePay encrypted request
+     * The GooglePay Token Payment Request
      * @maps google_pay
      * @var \PagarmeCoreApiLib\Models\CreateGooglePayRequest|null $googlePay public property
      */
     public $googlePay;
 
     /**
-     * The Emv encrypted request
+     * @todo Write general description for this property
      * @var \PagarmeCoreApiLib\Models\CreateEmvDecryptRequest|null $emv public property
      */
     public $emv;

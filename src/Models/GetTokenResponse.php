@@ -47,7 +47,7 @@ class GetTokenResponse implements JsonSerializable
     public $expiresAt;
 
     /**
-     * @todo Write general description for this property
+     * Card token data
      * @required
      * @var \PagarmeCoreApiLib\Models\GetCardTokenResponse $card public property
      */

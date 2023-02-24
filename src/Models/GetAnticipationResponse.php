@@ -39,7 +39,7 @@ class GetAnticipationResponse implements JsonSerializable
     public $approvedAmount;
 
     /**
-     * Recipient
+     * Recipient response
      * @var \PagarmeCoreApiLib\Models\GetRecipientResponse|null $recipient public property
      */
     public $recipient;

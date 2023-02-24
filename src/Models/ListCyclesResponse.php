@@ -21,7 +21,7 @@ class ListCyclesResponse implements JsonSerializable
     public $data;
 
     /**
-     * Paging object
+     * Object used for returning lists of objects with pagination
      * @var \PagarmeCoreApiLib\Models\PagingResponse|null $paging public property
      */
     public $paging;

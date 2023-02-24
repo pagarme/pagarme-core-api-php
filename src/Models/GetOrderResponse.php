@@ -44,7 +44,7 @@ class GetOrderResponse implements JsonSerializable
     public $items;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a customer
      * @var \PagarmeCoreApiLib\Models\GetCustomerResponse|null $customer public property
      */
     public $customer;
@@ -90,7 +90,7 @@ class GetOrderResponse implements JsonSerializable
     public $invoiceUrl;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting the shipping data
      * @required
      * @var \PagarmeCoreApiLib\Models\GetShippingResponse $shipping public property
      */
@@ -123,13 +123,13 @@ class GetOrderResponse implements JsonSerializable
     public $sessionId;
 
     /**
-     * Location
+     * Response object for geetting an order location request
      * @var \PagarmeCoreApiLib\Models\GetLocationResponse|null $location public property
      */
     public $location;
 
     /**
-     * Device's informations
+     * Response object for geetting an order device
      * @var \PagarmeCoreApiLib\Models\GetDeviceResponse|null $device public property
      */
     public $device;

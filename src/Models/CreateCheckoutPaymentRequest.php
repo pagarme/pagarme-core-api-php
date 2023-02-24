@@ -53,21 +53,21 @@ class CreateCheckoutPaymentRequest implements JsonSerializable
     public $gatewayAffiliationId;
 
     /**
-     * Credit Card payment request
+     * Checkout card payment request
      * @maps credit_card
      * @var \PagarmeCoreApiLib\Models\CreateCheckoutCreditCardPaymentRequest|null $creditCard public property
      */
     public $creditCard;
 
     /**
-     * Debit Card payment request
+     * Checkout credit card payment request
      * @maps debit_card
      * @var \PagarmeCoreApiLib\Models\CreateCheckoutDebitCardPaymentRequest|null $debitCard public property
      */
     public $debitCard;
 
     /**
-     * Boleto payment request
+     * @todo Write general description for this property
      * @var \PagarmeCoreApiLib\Models\CreateCheckoutBoletoPaymentRequest|null $boleto public property
      */
     public $boleto;
@@ -103,7 +103,7 @@ class CreateCheckoutPaymentRequest implements JsonSerializable
     public $billingAddressEditable;
 
     /**
-     * Billing Address
+     * Request for creating a new Address
      * @required
      * @maps billing_address
      * @var \PagarmeCoreApiLib\Models\CreateAddressRequest $billingAddress public property
@@ -111,7 +111,7 @@ class CreateCheckoutPaymentRequest implements JsonSerializable
     public $billingAddress;
 
     /**
-     * Bank Transfer payment request
+     * Checkout bank transfer payment request
      * @maps bank_transfer
      * @var \PagarmeCoreApiLib\Models\CreateCheckoutBankTransferRequest|null $bankTransfer public property
      */
@@ -126,7 +126,7 @@ class CreateCheckoutPaymentRequest implements JsonSerializable
     public $acceptedBrands;
 
     /**
-     * Pix payment request
+     * Checkout pix payment request
      * @var \PagarmeCoreApiLib\Models\CreateCheckoutPixPaymentRequest|null $pix public property
      */
     public $pix;

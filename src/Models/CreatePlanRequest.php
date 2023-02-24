@@ -105,7 +105,7 @@ class CreatePlanRequest implements JsonSerializable
     public $billingType;
 
     /**
-     * Plan's pricing scheme
+     * Request for creating a pricing scheme
      * @required
      * @maps pricing_scheme
      * @var \PagarmeCoreApiLib\Models\CreatePricingSchemeRequest $pricingScheme public property

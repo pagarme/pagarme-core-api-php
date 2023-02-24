@@ -15,7 +15,7 @@ use JsonSerializable;
 class UpdateSubscriptionCardRequest implements JsonSerializable
 {
     /**
-     * Credit card data
+     * Card data
      * @required
      * @var \PagarmeCoreApiLib\Models\CreateCardRequest $card public property
      */

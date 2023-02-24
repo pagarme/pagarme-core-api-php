@@ -29,7 +29,7 @@ class GetInvoiceItemResponse implements JsonSerializable
     public $description;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a pricing scheme
      * @required
      * @maps pricing_scheme
      * @var \PagarmeCoreApiLib\Models\GetPricingSchemeResponse $pricingScheme public property
@@ -37,7 +37,7 @@ class GetInvoiceItemResponse implements JsonSerializable
     public $pricingScheme;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a price bracket
      * @required
      * @maps price_bracket
      * @var \PagarmeCoreApiLib\Models\GetPriceBracketResponse $priceBracket public property

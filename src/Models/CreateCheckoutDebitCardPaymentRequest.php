@@ -22,7 +22,7 @@ class CreateCheckoutDebitCardPaymentRequest implements JsonSerializable
     public $statementDescriptor;
 
     /**
-     * Creates payment authentication
+     * The payment authentication request
      * @required
      * @var \PagarmeCoreApiLib\Models\CreatePaymentAuthenticationRequest $authentication public property
      */

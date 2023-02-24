@@ -23,7 +23,7 @@ class GetCheckoutDebitCardPaymentResponse implements JsonSerializable
     public $statementDescriptor;
 
     /**
-     * Payment Authentication response object data
+     * Payment Authentication response
      * @required
      * @var \PagarmeCoreApiLib\Models\GetPaymentAuthenticationResponse $authentication public property
      */

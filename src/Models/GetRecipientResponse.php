@@ -92,7 +92,7 @@ class GetRecipientResponse implements JsonSerializable
     public $deletedAt;
 
     /**
-     * Default bank account
+     * @todo Write general description for this property
      * @required
      * @maps default_bank_account
      * @var \PagarmeCoreApiLib\Models\GetBankAccountResponse $defaultBankAccount public property
@@ -176,30 +176,24 @@ class GetRecipientResponse implements JsonSerializable
      */
     public function __construct()
     {
-        switch (func_num_args()) {
-            case 17:
-                $this->id                            = func_get_arg(0);
-                $this->name                          = func_get_arg(1);
-                $this->email                         = func_get_arg(2);
-                $this->document                      = func_get_arg(3);
-                $this->description                   = func_get_arg(4);
-                $this->type                          = func_get_arg(5);
-                $this->status                        = func_get_arg(6);
-                $this->createdAt                     = func_get_arg(7);
-                $this->updatedAt                     = func_get_arg(8);
-                $this->deletedAt                     = func_get_arg(9);
-                $this->defaultBankAccount            = func_get_arg(10);
-                $this->gatewayRecipients             = func_get_arg(11);
-                $this->metadata                      = func_get_arg(12);
-                $this->automaticAnticipationSettings = func_get_arg(13);
-                $this->transferSettings              = func_get_arg(14);
-                $this->code                          = func_get_arg(15);
-                $this->paymentMode                   = func_get_arg(16);
-                break;
-
-            default:
-                $this->paymentMode = 'bank_transfer';
-                break;
+        if (17 == func_num_args()) {
+            $this->id                            = func_get_arg(0);
+            $this->name                          = func_get_arg(1);
+            $this->email                         = func_get_arg(2);
+            $this->document                      = func_get_arg(3);
+            $this->description                   = func_get_arg(4);
+            $this->type                          = func_get_arg(5);
+            $this->status                        = func_get_arg(6);
+            $this->createdAt                     = func_get_arg(7);
+            $this->updatedAt                     = func_get_arg(8);
+            $this->deletedAt                     = func_get_arg(9);
+            $this->defaultBankAccount            = func_get_arg(10);
+            $this->gatewayRecipients             = func_get_arg(11);
+            $this->metadata                      = func_get_arg(12);
+            $this->automaticAnticipationSettings = func_get_arg(13);
+            $this->transferSettings              = func_get_arg(14);
+            $this->code                          = func_get_arg(15);
+            $this->paymentMode                   = func_get_arg(16);
         }
     }
 

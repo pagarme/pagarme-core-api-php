@@ -38,7 +38,7 @@ class CreateChargeRequest implements JsonSerializable
     public $customerId;
 
     /**
-     * Customer data
+     * Request for creating a new customer
      * @required
      * @var \PagarmeCoreApiLib\Models\CreateCustomerRequest $customer public property
      */

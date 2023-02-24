@@ -34,9 +34,10 @@ class GetPixPayerResponse implements JsonSerializable
     public $documentType;
 
     /**
-     * @todo Write general description for this property
+     * Payer's bank details.
+     * @required
      * @maps bank_account
-     * @var \PagarmeCoreApiLib\Models\GetPixBankAccountResponse|null $bankAccount public property
+     * @var \PagarmeCoreApiLib\Models\GetPixBankAccountResponse $bankAccount public property
      */
     public $bankAccount;
 

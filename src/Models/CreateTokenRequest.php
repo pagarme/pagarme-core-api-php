@@ -22,7 +22,7 @@ class CreateTokenRequest implements JsonSerializable
     public $type;
 
     /**
-     * Card data
+     * Card token data
      * @required
      * @var \PagarmeCoreApiLib\Models\CreateCardTokenRequest $card public property
      */
@@ -35,15 +35,9 @@ class CreateTokenRequest implements JsonSerializable
      */
     public function __construct()
     {
-        switch (func_num_args()) {
-            case 2:
-                $this->type = func_get_arg(0);
-                $this->card = func_get_arg(1);
-                break;
-
-            default:
-                $this->type = 'card';
-                break;
+        if (2 == func_num_args()) {
+            $this->type = func_get_arg(0);
+            $this->card = func_get_arg(1);
         }
     }
 

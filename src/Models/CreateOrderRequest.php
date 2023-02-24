@@ -22,7 +22,7 @@ class CreateOrderRequest implements JsonSerializable
     public $items;
 
     /**
-     * Customer
+     * Request for creating a new customer
      * @required
      * @var \PagarmeCoreApiLib\Models\CreateCustomerRequest $customer public property
      */
@@ -84,13 +84,13 @@ class CreateOrderRequest implements JsonSerializable
     public $sessionId;
 
     /**
-     * Request's location
+     * Request for creating a location
      * @var \PagarmeCoreApiLib\Models\CreateLocationRequest|null $location public property
      */
     public $location;
 
     /**
-     * Device's informations
+     * Request for creating a device
      * @var \PagarmeCoreApiLib\Models\CreateDeviceRequest|null $device public property
      */
     public $device;
@@ -141,29 +141,23 @@ class CreateOrderRequest implements JsonSerializable
      */
     public function __construct()
     {
-        switch (func_num_args()) {
-            case 16:
-                $this->items            = func_get_arg(0);
-                $this->customer         = func_get_arg(1);
-                $this->payments         = func_get_arg(2);
-                $this->code             = func_get_arg(3);
-                $this->customerId       = func_get_arg(4);
-                $this->shipping         = func_get_arg(5);
-                $this->metadata         = func_get_arg(6);
-                $this->antifraudEnabled = func_get_arg(7);
-                $this->ip               = func_get_arg(8);
-                $this->sessionId        = func_get_arg(9);
-                $this->location         = func_get_arg(10);
-                $this->device           = func_get_arg(11);
-                $this->closed           = func_get_arg(12);
-                $this->currency         = func_get_arg(13);
-                $this->antifraud        = func_get_arg(14);
-                $this->submerchant      = func_get_arg(15);
-                break;
-
-            default:
-                $this->closed = true;
-                break;
+        if (16 == func_num_args()) {
+            $this->items            = func_get_arg(0);
+            $this->customer         = func_get_arg(1);
+            $this->payments         = func_get_arg(2);
+            $this->code             = func_get_arg(3);
+            $this->customerId       = func_get_arg(4);
+            $this->shipping         = func_get_arg(5);
+            $this->metadata         = func_get_arg(6);
+            $this->antifraudEnabled = func_get_arg(7);
+            $this->ip               = func_get_arg(8);
+            $this->sessionId        = func_get_arg(9);
+            $this->location         = func_get_arg(10);
+            $this->device           = func_get_arg(11);
+            $this->closed           = func_get_arg(12);
+            $this->currency         = func_get_arg(13);
+            $this->antifraud        = func_get_arg(14);
+            $this->submerchant      = func_get_arg(15);
         }
     }
 

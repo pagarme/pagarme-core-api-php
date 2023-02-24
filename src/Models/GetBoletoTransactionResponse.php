@@ -63,7 +63,7 @@ class GetBoletoTransactionResponse extends GetTransactionResponse implements Jso
     public $instructions;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a billing address
      * @required
      * @maps billing_address
      * @var \PagarmeCoreApiLib\Models\GetBillingAddressResponse $billingAddress public property

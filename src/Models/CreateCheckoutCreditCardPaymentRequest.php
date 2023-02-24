@@ -28,7 +28,7 @@ class CreateCheckoutCreditCardPaymentRequest implements JsonSerializable
     public $installments;
 
     /**
-     * Creates payment authentication
+     * The payment authentication request
      * @var \PagarmeCoreApiLib\Models\CreatePaymentAuthenticationRequest|null $authentication public property
      */
     public $authentication;

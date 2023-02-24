@@ -54,7 +54,7 @@ class CreateShippingRequest implements JsonSerializable
     public $addressId;
 
     /**
-     * Address data
+     * Request for creating a new Address
      * @required
      * @var \PagarmeCoreApiLib\Models\CreateAddressRequest $address public property
      */

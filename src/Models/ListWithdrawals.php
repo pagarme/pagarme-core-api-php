@@ -22,7 +22,7 @@ class ListWithdrawals implements JsonSerializable
     public $data;
 
     /**
-     * Paging object
+     * Object used for returning lists of objects with pagination
      * @required
      * @var \PagarmeCoreApiLib\Models\PagingResponse $paging public property
      */

@@ -46,7 +46,7 @@ class GetCheckoutPaymentSettingsResponse implements JsonSerializable
     public $status;
 
     /**
-     * Customer
+     * Response object for getting a customer
      * @var \PagarmeCoreApiLib\Models\GetCustomerResponse|null $customer public property
      */
     public $customer;

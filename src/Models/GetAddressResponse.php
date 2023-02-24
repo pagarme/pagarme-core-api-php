@@ -105,7 +105,7 @@ class GetAddressResponse implements JsonSerializable
     public $updatedAt;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a customer
      * @var \PagarmeCoreApiLib\Models\GetCustomerResponse|null $customer public property
      */
     public $customer;

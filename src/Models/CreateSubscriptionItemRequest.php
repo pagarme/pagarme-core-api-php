@@ -22,7 +22,7 @@ class CreateSubscriptionItemRequest implements JsonSerializable
     public $description;
 
     /**
-     * Pricing scheme
+     * Request for creating a pricing scheme
      * @required
      * @maps pricing_scheme
      * @var \PagarmeCoreApiLib\Models\CreatePricingSchemeRequest $pricingScheme public property

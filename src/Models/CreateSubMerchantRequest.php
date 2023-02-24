@@ -59,14 +59,14 @@ class CreateSubMerchantRequest implements JsonSerializable
     public $type;
 
     /**
-     * Phone
+     * @todo Write general description for this property
      * @required
      * @var \PagarmeCoreApiLib\Models\CreatePhoneRequest $phone public property
      */
     public $phone;
 
     /**
-     * Address
+     * Request for creating a new Address
      * @required
      * @var \PagarmeCoreApiLib\Models\CreateAddressRequest $address public property
      */

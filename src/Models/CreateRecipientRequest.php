@@ -50,7 +50,7 @@ class CreateRecipientRequest implements JsonSerializable
     public $type;
 
     /**
-     * Bank account
+     * Request for creating a bank account
      * @required
      * @maps default_bank_account
      * @var \PagarmeCoreApiLib\Models\CreateBankAccountRequest $defaultBankAccount public property
@@ -65,7 +65,7 @@ class CreateRecipientRequest implements JsonSerializable
     public $metadata;
 
     /**
-     * Receiver Transfer Information
+     * Informações de transferência do recebedor
      * @maps transfer_settings
      * @var \PagarmeCoreApiLib\Models\CreateTransferSettingsRequest|null $transferSettings public property
      */
@@ -101,23 +101,17 @@ class CreateRecipientRequest implements JsonSerializable
      */
     public function __construct()
     {
-        switch (func_num_args()) {
-            case 10:
-                $this->name               = func_get_arg(0);
-                $this->email              = func_get_arg(1);
-                $this->description        = func_get_arg(2);
-                $this->document           = func_get_arg(3);
-                $this->type               = func_get_arg(4);
-                $this->defaultBankAccount = func_get_arg(5);
-                $this->metadata           = func_get_arg(6);
-                $this->transferSettings   = func_get_arg(7);
-                $this->code               = func_get_arg(8);
-                $this->paymentMode        = func_get_arg(9);
-                break;
-
-            default:
-                $this->paymentMode = 'bank_transfer';
-                break;
+        if (10 == func_num_args()) {
+            $this->name               = func_get_arg(0);
+            $this->email              = func_get_arg(1);
+            $this->description        = func_get_arg(2);
+            $this->document           = func_get_arg(3);
+            $this->type               = func_get_arg(4);
+            $this->defaultBankAccount = func_get_arg(5);
+            $this->metadata           = func_get_arg(6);
+            $this->transferSettings   = func_get_arg(7);
+            $this->code               = func_get_arg(8);
+            $this->paymentMode        = func_get_arg(9);
         }
     }
 

@@ -55,7 +55,7 @@ class GetPlanItemResponse implements JsonSerializable
     public $updatedAt;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a pricing scheme
      * @required
      * @maps pricing_scheme
      * @var \PagarmeCoreApiLib\Models\GetPricingSchemeResponse $pricingScheme public property
@@ -70,7 +70,7 @@ class GetPlanItemResponse implements JsonSerializable
     public $description;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a plan
      * @required
      * @var \PagarmeCoreApiLib\Models\GetPlanResponse $plan public property
      */

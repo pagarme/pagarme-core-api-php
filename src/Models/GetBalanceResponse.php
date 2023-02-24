@@ -30,7 +30,7 @@ class GetBalanceResponse implements JsonSerializable
     public $availableAmount;
 
     /**
-     * Recipient
+     * Recipient response
      * @var \PagarmeCoreApiLib\Models\GetRecipientResponse|null $recipient public property
      */
     public $recipient;

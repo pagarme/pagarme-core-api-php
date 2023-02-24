@@ -15,7 +15,7 @@ use JsonSerializable;
 class UpdateRecipientBankAccountRequest implements JsonSerializable
 {
     /**
-     * Bank account
+     * Request for creating a bank account
      * @required
      * @maps bank_account
      * @var \PagarmeCoreApiLib\Models\CreateBankAccountRequest $bankAccount public property
@@ -37,15 +37,9 @@ class UpdateRecipientBankAccountRequest implements JsonSerializable
      */
     public function __construct()
     {
-        switch (func_num_args()) {
-            case 2:
-                $this->bankAccount = func_get_arg(0);
-                $this->paymentMode = func_get_arg(1);
-                break;
-
-            default:
-                $this->paymentMode = 'bank_transfer';
-                break;
+        if (2 == func_num_args()) {
+            $this->bankAccount = func_get_arg(0);
+            $this->paymentMode = func_get_arg(1);
         }
     }
 

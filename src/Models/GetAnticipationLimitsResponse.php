@@ -15,14 +15,14 @@ use JsonSerializable;
 class GetAnticipationLimitsResponse implements JsonSerializable
 {
     /**
-     * Max limit
+     * Anticipation limit
      * @required
      * @var \PagarmeCoreApiLib\Models\GetAnticipationLimitResponse $max public property
      */
     public $max;
 
     /**
-     * Min limit
+     * Anticipation limit
      * @required
      * @var \PagarmeCoreApiLib\Models\GetAnticipationLimitResponse $min public property
      */

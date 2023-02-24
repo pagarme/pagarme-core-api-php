@@ -87,7 +87,7 @@ class GetCardResponse implements JsonSerializable
     public $updatedAt;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a billing address
      * @required
      * @maps billing_address
      * @var \PagarmeCoreApiLib\Models\GetBillingAddressResponse $billingAddress public property
@@ -95,7 +95,7 @@ class GetCardResponse implements JsonSerializable
     public $billingAddress;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a customer
      * @var \PagarmeCoreApiLib\Models\GetCustomerResponse|null $customer public property
      */
     public $customer;

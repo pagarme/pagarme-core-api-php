@@ -62,7 +62,7 @@ class GetSubscriptionResponse implements JsonSerializable
     public $billingType;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a period
      * @maps current_cycle
      * @var \PagarmeCoreApiLib\Models\GetPeriodResponse|null $currentCycle public property
      */
@@ -116,13 +116,13 @@ class GetSubscriptionResponse implements JsonSerializable
     public $updatedAt;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a customer
      * @var \PagarmeCoreApiLib\Models\GetCustomerResponse|null $customer public property
      */
     public $customer;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting a credit card
      * @required
      * @var \PagarmeCoreApiLib\Models\GetCardResponse $card public property
      */
@@ -151,7 +151,7 @@ class GetSubscriptionResponse implements JsonSerializable
     public $metadata;
 
     /**
-     * @todo Write general description for this property
+     * Response object for getting the setup from a subscription
      * @required
      * @var \PagarmeCoreApiLib\Models\GetSetupResponse $setup public property
      */
@@ -216,7 +216,7 @@ class GetSubscriptionResponse implements JsonSerializable
     public $boletoDueDays;
 
     /**
-     * Subscription's split responde
+     * @todo Write general description for this property
      * @required
      * @var \PagarmeCoreApiLib\Models\GetSubscriptionSplitResponse $split public property
      */
