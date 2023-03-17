@@ -377,8 +377,8 @@ function getUsages(
 ```php
 $subscriptionId = 'subscription_id';
 $itemId = 'item_id';
-$page = 214;
-$size = 214;
+$page = 244;
+$size = 244;
 $code = 'code';
 $group = 'group';
 $usedSince = date("D M d, Y G:i");
@@ -577,8 +577,8 @@ function getSubscriptionItems(
 
 ```php
 $subscriptionId = 'subscription_id';
-$page = 214;
-$size = 214;
+$page = 244;
+$size = 244;
 $name = 'name';
 $code = 'code';
 $status = 'status';
@@ -784,8 +784,8 @@ function getSubscriptions(
 #### Example Usage
 
 ```php
-$page = 214;
-$size = 214;
+$page = 244;
+$size = 244;
 $code = 'code';
 $billingType = 'billing_type';
 $customerId = 'customer_id';
@@ -865,7 +865,8 @@ $result = $subscriptions->createSubscription($body, $idempotencyKey);
 ```php
 function cancelSubscription(
         $subscriptionId,
-        $idempotencyKey = null)
+        $idempotencyKey = null,
+        $body = null)
 ```
 
 #### Parameters
@@ -874,6 +875,7 @@ function cancelSubscription(
 |-----------|------|-------------|
 | subscriptionId |  ``` Required ```  | Subscription id |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+| body |  ``` Optional ```  | Request for cancelling a subscription |
 
 
 
@@ -882,8 +884,9 @@ function cancelSubscription(
 ```php
 $subscriptionId = 'subscription_id';
 $idempotencyKey = 'idempotency-key';
+$body = new CreateCancelSubscriptionRequest();
 
-$result = $subscriptions->cancelSubscription($subscriptionId, $idempotencyKey);
+$result = $subscriptions->cancelSubscription($subscriptionId, $idempotencyKey, $body);
 
 ```
 
@@ -1324,8 +1327,8 @@ function getDiscounts(
 
 ```php
 $subscriptionId = 'subscription_id';
-$page = 214;
-$size = 214;
+$page = 202;
+$size = 202;
 
 $result = $subscriptions->getDiscounts($subscriptionId, $page, $size);
 
@@ -1462,8 +1465,8 @@ function getIncrements(
 
 ```php
 $subscriptionId = 'subscription_id';
-$page = 214;
-$size = 214;
+$page = 202;
+$size = 202;
 
 $result = $subscriptions->getIncrements($subscriptionId, $page, $size);
 
@@ -1840,8 +1843,8 @@ function getOrders(
 #### Example Usage
 
 ```php
-$page = 214;
-$size = 214;
+$page = 202;
+$size = 202;
 $code = 'code';
 $status = 'status';
 $createdSince = date("D M d, Y G:i");
@@ -2712,8 +2715,8 @@ function getPlans(
 #### Example Usage
 
 ```php
-$page = 51;
-$size = 51;
+$page = 202;
+$size = 202;
 $name = 'name';
 $status = 'status';
 $billingType = 'billing_type';
@@ -3006,8 +3009,8 @@ function getInvoices(
 #### Example Usage
 
 ```php
-$page = 51;
-$size = 51;
+$page = 39;
+$size = 39;
 $code = 'code';
 $customerId = 'customer_id';
 $subscriptionId = 'subscription_id';
@@ -3530,8 +3533,8 @@ function getAccessTokens(
 
 ```php
 $customerId = 'customer_id';
-$page = 51;
-$size = 51;
+$page = 39;
+$size = 39;
 
 $result = $customers->getAccessTokens($customerId, $page, $size);
 
@@ -3622,8 +3625,8 @@ function getAddresses(
 
 ```php
 $customerId = 'customer_id';
-$page = 51;
-$size = 51;
+$page = 39;
+$size = 39;
 
 $result = $customers->getAddresses($customerId, $page, $size);
 
@@ -3851,8 +3854,8 @@ function getCards(
 
 ```php
 $customerId = 'customer_id';
-$page = 51;
-$size = 51;
+$page = 39;
+$size = 39;
 
 $result = $customers->getCards($customerId, $page, $size);
 
@@ -4224,8 +4227,8 @@ function getChargeTransactions(
 
 ```php
 $chargeId = 'charge_id';
-$page = 142;
-$size = 142;
+$page = 39;
+$size = 39;
 
 $result = $charges->getChargeTransactions($chargeId, $page, $size);
 
@@ -4327,8 +4330,8 @@ function getCharges(
 #### Example Usage
 
 ```php
-$page = 142;
-$size = 142;
+$page = 39;
+$size = 39;
 $code = 'code';
 $status = 'status';
 $paymentMethod = 'payment_method';
@@ -4447,7 +4450,8 @@ $result = $charges->getCharge($chargeId);
 ```php
 function cancelCharge(
         $chargeId,
-        $idempotencyKey = null)
+        $idempotencyKey = null,
+        $body = null)
 ```
 
 #### Parameters
@@ -4456,6 +4460,7 @@ function cancelCharge(
 |-----------|------|-------------|
 | chargeId |  ``` Required ```  | Charge id |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+| body |  ``` Optional ```  | Request for cancelling a charge |
 
 
 
@@ -4464,8 +4469,9 @@ function cancelCharge(
 ```php
 $chargeId = 'charge_id';
 $idempotencyKey = 'idempotency-key';
+$body = new CreateCancelChargeRequest();
 
-$result = $charges->cancelCharge($chargeId, $idempotencyKey);
+$result = $charges->cancelCharge($chargeId, $idempotencyKey, $body);
 
 ```
 
@@ -4884,8 +4890,8 @@ function getAnticipations(
 
 ```php
 $recipientId = 'recipient_id';
-$page = 142;
-$size = 142;
+$page = 130;
+$size = 130;
 $status = 'status';
 $timeframe = 'timeframe';
 $paymentDateSince = date("D M d, Y G:i");
@@ -4979,8 +4985,8 @@ function getRecipients(
 #### Example Usage
 
 ```php
-$page = 142;
-$size = 142;
+$page = 130;
+$size = 130;
 
 $result = $recipients->getRecipients($page, $size);
 
@@ -5209,8 +5215,8 @@ function getTransfers(
 
 ```php
 $recipientId = 'recipient_id';
-$page = 142;
-$size = 142;
+$page = 130;
+$size = 130;
 $status = 'status';
 $createdSince = date("D M d, Y G:i");
 $createdUntil = date("D M d, Y G:i");
@@ -5353,8 +5359,8 @@ function getWithdrawals(
 
 ```php
 $recipientId = 'recipient_id';
-$page = 142;
-$size = 142;
+$page = 130;
+$size = 130;
 $status = 'status';
 $createdSince = date("D M d, Y G:i");
 $createdUntil = date("D M d, Y G:i");

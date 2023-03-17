@@ -773,14 +773,16 @@ class ChargesController extends BaseController
     /**
      * Cancel a charge
      *
-     * @param string $chargeId        Charge id
-     * @param string $idempotencyKey  (optional) TODO: type description here
+     * @param string                           $chargeId        Charge id
+     * @param string                           $idempotencyKey  (optional) TODO: type description here
+     * @param Models\CreateCancelChargeRequest $body            (optional) Request for cancelling a charge
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
     public function cancelCharge(
         $chargeId,
-        $idempotencyKey = null
+        $idempotencyKey = null,
+        $body = null
     ) {
 
         //prepare query string for API call
@@ -798,8 +800,12 @@ class ChargesController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
+
+        //json encode body
+        $_bodyJson = Request\Body::Json($body);
 
         //set HTTP basic auth parameters
         Request::auth(Configuration::$basicAuthUserName, Configuration::$basicAuthPassword);
@@ -811,7 +817,7 @@ class ChargesController extends BaseController
         }
 
         //and invoke the API call request to fetch the response
-        $response = Request::delete($_queryUrl, $_headers);
+        $response = Request::delete($_queryUrl, $_headers, $_bodyJson);
 
         $_httpResponse = new HttpResponse($response->code, $response->headers, $response->raw_body);
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);

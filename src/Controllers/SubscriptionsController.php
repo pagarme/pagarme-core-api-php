@@ -1346,14 +1346,16 @@ class SubscriptionsController extends BaseController
     /**
      * Cancels a subscription
      *
-     * @param string $subscriptionId  Subscription id
-     * @param string $idempotencyKey  (optional) TODO: type description here
+     * @param string                                 $subscriptionId  Subscription id
+     * @param string                                 $idempotencyKey  (optional) TODO: type description here
+     * @param Models\CreateCancelSubscriptionRequest $body            (optional) Request for cancelling a subscription
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
     public function cancelSubscription(
         $subscriptionId,
-        $idempotencyKey = null
+        $idempotencyKey = null,
+        $body = null
     ) {
 
         //prepare query string for API call
@@ -1371,8 +1373,12 @@ class SubscriptionsController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
+
+        //json encode body
+        $_bodyJson = Request\Body::Json($body);
 
         //set HTTP basic auth parameters
         Request::auth(Configuration::$basicAuthUserName, Configuration::$basicAuthPassword);
@@ -1384,7 +1390,7 @@ class SubscriptionsController extends BaseController
         }
 
         //and invoke the API call request to fetch the response
-        $response = Request::delete($_queryUrl, $_headers);
+        $response = Request::delete($_queryUrl, $_headers, $_bodyJson);
 
         $_httpResponse = new HttpResponse($response->code, $response->headers, $response->raw_body);
         $_httpContext = new HttpContext($_httpRequest, $_httpResponse);
