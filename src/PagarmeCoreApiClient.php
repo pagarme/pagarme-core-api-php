@@ -89,19 +89,19 @@ class PagarmeCoreApiClient
         return Controllers\TokensController::getInstance();
     }
     /**
-     * Singleton access to Transactions controller
-     * @return Controllers\TransactionsController The *Singleton* instance
-     */
-    public function getTransactions()
-    {
-        return Controllers\TransactionsController::getInstance();
-    }
-    /**
      * Singleton access to Transfers controller
      * @return Controllers\TransfersController The *Singleton* instance
      */
     public function getTransfers()
     {
         return Controllers\TransfersController::getInstance();
+    }
+    /**
+     * Singleton access to Transactions controller
+     * @return Controllers\TransactionsController The *Singleton* instance
+     */
+    public function getTransactions()
+    {
+        return Controllers\TransactionsController::getInstance();
     }
 }
