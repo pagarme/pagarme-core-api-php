@@ -66,6 +66,14 @@ class GetPixTransactionResponse extends GetTransactionResponse implements JsonSe
     public $payer;
 
     /**
+     * Provider transaction id
+     * @required
+     * @maps provider_transaction_id
+     * @var string $providerTransactionId public property
+     */
+    public $providerTransactionId;
+
+    /**
      * Constructor to set initial or default values of member properties
      * @param string               $qrCode                Initialization value for $this->qrCode
      * @param string               $qrCodeUrl             Initialization value for $this->qrCodeUrl
@@ -73,16 +81,18 @@ class GetPixTransactionResponse extends GetTransactionResponse implements JsonSe
      * @param array                $additionalInformation Initialization value for $this->additionalInformation
      * @param string               $endToEndId            Initialization value for $this->endToEndId
      * @param GetPixPayerResponse  $payer                 Initialization value for $this->payer
+     * @param string               $providerTransactionId Initialization value for $this->providerTransactionId
      */
     public function __construct()
     {
-        if (6 == func_num_args()) {
+        if (7 == func_num_args()) {
             $this->qrCode                = func_get_arg(0);
             $this->qrCodeUrl             = func_get_arg(1);
             $this->expiresAt             = func_get_arg(2);
             $this->additionalInformation = func_get_arg(3);
             $this->endToEndId            = func_get_arg(4);
             $this->payer                 = func_get_arg(5);
+            $this->providerTransactionId = func_get_arg(6);
         }
     }
 
@@ -93,12 +103,13 @@ class GetPixTransactionResponse extends GetTransactionResponse implements JsonSe
     public function jsonSerialize()
     {
         $json = array();
-        $json['qr_code']                = $this->qrCode;
-        $json['qr_code_url']            = $this->qrCodeUrl;
-        $json['expires_at']             = DateTimeHelper::toRfc3339DateTime($this->expiresAt);
-        $json['additional_information'] = $this->additionalInformation;
-        $json['end_to_end_id']          = $this->endToEndId;
-        $json['payer']                  = $this->payer;
+        $json['qr_code']                 = $this->qrCode;
+        $json['qr_code_url']             = $this->qrCodeUrl;
+        $json['expires_at']              = DateTimeHelper::toRfc3339DateTime($this->expiresAt);
+        $json['additional_information']  = $this->additionalInformation;
+        $json['end_to_end_id']           = $this->endToEndId;
+        $json['payer']                   = $this->payer;
+        $json['provider_transaction_id'] = $this->providerTransactionId;
         $json = array_merge($json, parent::jsonSerialize());
 
         return $json;
