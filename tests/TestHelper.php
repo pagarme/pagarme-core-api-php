@@ -343,15 +343,15 @@ class TestHelper
     {
         $mapper = new JsonMapper();
         $mapper->arChildClasses['PagarmeCoreApiLib\\Models\\GetTransactionResponse'] = array(
-            'PagarmeCoreApiLib\\Models\\GetSafetyPayTransactionResponse', 
             'PagarmeCoreApiLib\\Models\\GetBankTransferTransactionResponse', 
+            'PagarmeCoreApiLib\\Models\\GetSafetyPayTransactionResponse', 
             'PagarmeCoreApiLib\\Models\\GetVoucherTransactionResponse', 
+            'PagarmeCoreApiLib\\Models\\GetBoletoTransactionResponse', 
             'PagarmeCoreApiLib\\Models\\GetDebitCardTransactionResponse', 
             'PagarmeCoreApiLib\\Models\\GetPrivateLabelTransactionResponse', 
             'PagarmeCoreApiLib\\Models\\GetCashTransactionResponse', 
-            'PagarmeCoreApiLib\\Models\\GetBoletoTransactionResponse', 
-            'PagarmeCoreApiLib\\Models\\GetPixTransactionResponse', 
-            'PagarmeCoreApiLib\\Models\\GetCreditCardTransactionResponse'
+            'PagarmeCoreApiLib\\Models\\GetCreditCardTransactionResponse', 
+            'PagarmeCoreApiLib\\Models\\GetPixTransactionResponse'
         );
         return $mapper;
     }

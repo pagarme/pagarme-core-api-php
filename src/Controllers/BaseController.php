@@ -24,7 +24,7 @@ class BaseController
      * User-agent to be sent with API calls
      * @var string
      */
-    const USER_AGENT = 'PagarmeCoreApi - PHP 5.7.3';
+    const USER_AGENT = 'PagarmeCoreApi - PHP 5.7.4';
 
     /**
      * HttpCallBack instance associated with this controller
@@ -58,15 +58,15 @@ class BaseController
     {
         $mapper = new JsonMapper();
         $mapper->arChildClasses['PagarmeCoreApiLib\\Models\\GetTransactionResponse'] = array(
-            'PagarmeCoreApiLib\\Models\\GetSafetyPayTransactionResponse',
             'PagarmeCoreApiLib\\Models\\GetBankTransferTransactionResponse',
+            'PagarmeCoreApiLib\\Models\\GetSafetyPayTransactionResponse',
             'PagarmeCoreApiLib\\Models\\GetVoucherTransactionResponse',
+            'PagarmeCoreApiLib\\Models\\GetBoletoTransactionResponse',
             'PagarmeCoreApiLib\\Models\\GetDebitCardTransactionResponse',
             'PagarmeCoreApiLib\\Models\\GetPrivateLabelTransactionResponse',
             'PagarmeCoreApiLib\\Models\\GetCashTransactionResponse',
-            'PagarmeCoreApiLib\\Models\\GetBoletoTransactionResponse',
-            'PagarmeCoreApiLib\\Models\\GetPixTransactionResponse',
-            'PagarmeCoreApiLib\\Models\\GetCreditCardTransactionResponse'
+            'PagarmeCoreApiLib\\Models\\GetCreditCardTransactionResponse',
+            'PagarmeCoreApiLib\\Models\\GetPixTransactionResponse'
         );
         return $mapper;
     }
