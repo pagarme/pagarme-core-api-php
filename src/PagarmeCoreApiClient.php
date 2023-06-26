@@ -18,11 +18,9 @@ class PagarmeCoreApiClient
      * Constructor with authentication and configuration parameters
      */
     public function __construct(
-        $serviceRefererName = null,
         $basicAuthUserName = null,
         $basicAuthPassword = null
     ) {
-        Configuration::$serviceRefererName = $serviceRefererName ? $serviceRefererName : Configuration::$serviceRefererName;
         Configuration::$basicAuthUserName = $basicAuthUserName ? $basicAuthUserName : Configuration::$basicAuthUserName;
         Configuration::$basicAuthPassword = $basicAuthPassword ? $basicAuthPassword : Configuration::$basicAuthPassword;
     }
@@ -91,19 +89,19 @@ class PagarmeCoreApiClient
         return Controllers\TokensController::getInstance();
     }
     /**
-     * Singleton access to Transfers controller
-     * @return Controllers\TransfersController The *Singleton* instance
-     */
-    public function getTransfers()
-    {
-        return Controllers\TransfersController::getInstance();
-    }
-    /**
      * Singleton access to Transactions controller
      * @return Controllers\TransactionsController The *Singleton* instance
      */
     public function getTransactions()
     {
         return Controllers\TransactionsController::getInstance();
+    }
+    /**
+     * Singleton access to Transfers controller
+     * @return Controllers\TransfersController The *Singleton* instance
+     */
+    public function getTransfers()
+    {
+        return Controllers\TransfersController::getInstance();
     }
 }

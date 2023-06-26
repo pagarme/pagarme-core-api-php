@@ -18,10 +18,6 @@ class Configuration
      * @var string
      */
     public static $BASEURI = 'https://api.pagar.me/core/v5';
-    /**
-     * @todo Replace the $serviceRefererName with an appropriate value
-     */
-    public static $serviceRefererName = '';
 
     /**
      * The username to use with basic authentication

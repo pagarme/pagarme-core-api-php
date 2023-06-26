@@ -66,8 +66,7 @@ class TransactionsController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json',
-            'ServiceRefererName' => Configuration::$serviceRefererName
+            'Accept'        => 'application/json'
         );
 
         //set HTTP basic auth parameters

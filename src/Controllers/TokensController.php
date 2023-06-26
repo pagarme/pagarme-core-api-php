@@ -78,7 +78,6 @@ class TokensController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
-            'ServiceRefererName' => Configuration::$serviceRefererName,
             'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
@@ -174,8 +173,7 @@ class TokensController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json',
-            'ServiceRefererName' => Configuration::$serviceRefererName
+            'Accept'        => 'application/json'
         );
 
         //set HTTP basic auth parameters
