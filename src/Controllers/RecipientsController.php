@@ -70,7 +70,8 @@ class RecipientsController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
+            'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName
         );
 
         //set HTTP basic auth parameters
@@ -156,6 +157,7 @@ class RecipientsController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
@@ -241,7 +243,8 @@ class RecipientsController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
+            'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName
         );
 
         //set HTTP basic auth parameters
@@ -327,6 +330,7 @@ class RecipientsController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
@@ -440,7 +444,8 @@ class RecipientsController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'       => BaseController::USER_AGENT,
-            'Accept'           => 'application/json'
+            'Accept'           => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName
         );
 
         //set HTTP basic auth parameters
@@ -531,7 +536,8 @@ class RecipientsController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
+            'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName
         );
 
         //set HTTP basic auth parameters
@@ -615,7 +621,8 @@ class RecipientsController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
+            'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName
         );
 
         //set HTTP basic auth parameters
@@ -694,6 +701,7 @@ class RecipientsController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
@@ -782,7 +790,8 @@ class RecipientsController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
+            'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName
         );
 
         //set HTTP basic auth parameters
@@ -868,6 +877,7 @@ class RecipientsController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
@@ -958,6 +968,7 @@ class RecipientsController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
@@ -1062,7 +1073,8 @@ class RecipientsController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
+            'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName
         );
 
         //set HTTP basic auth parameters
@@ -1148,6 +1160,7 @@ class RecipientsController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
@@ -1236,6 +1249,7 @@ class RecipientsController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'Content-Type'    => 'application/json'
         );
 
@@ -1339,7 +1353,8 @@ class RecipientsController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
+            'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName
         );
 
         //set HTTP basic auth parameters
@@ -1426,6 +1441,7 @@ class RecipientsController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
@@ -1514,7 +1530,8 @@ class RecipientsController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
+            'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName
         );
 
         //set HTTP basic auth parameters
@@ -1600,6 +1617,7 @@ class RecipientsController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
@@ -1685,7 +1703,8 @@ class RecipientsController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
+            'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName
         );
 
         //set HTTP basic auth parameters
@@ -1766,7 +1785,8 @@ class RecipientsController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
+            'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName
         );
 
         //set HTTP basic auth parameters
@@ -1840,7 +1860,8 @@ class RecipientsController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
+            'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName
         );
 
         //set HTTP basic auth parameters

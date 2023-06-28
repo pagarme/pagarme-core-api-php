@@ -17,10 +17,12 @@ class PagarmeCoreApiClient
     /**
      * Constructor with authentication and configuration parameters
      */
-    public function __construct(
+    public function __construct(      
         $basicAuthUserName = null,
-        $basicAuthPassword = null
+        $basicAuthPassword = null,
+        $serviceRefererName = null
     ) {
+        Configuration::$serviceRefererName = $serviceRefererName ? $serviceRefererName : Configuration::$serviceRefererName;
         Configuration::$basicAuthUserName = $basicAuthUserName ? $basicAuthUserName : Configuration::$basicAuthUserName;
         Configuration::$basicAuthPassword = $basicAuthPassword ? $basicAuthPassword : Configuration::$basicAuthPassword;
     }

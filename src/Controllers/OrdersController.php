@@ -85,7 +85,8 @@ class OrdersController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
+            'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName
         );
 
         //set HTTP basic auth parameters
@@ -164,6 +165,7 @@ class OrdersController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
@@ -252,6 +254,7 @@ class OrdersController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'idempotency-key' => $idempotencyKey
         );
 
@@ -338,6 +341,7 @@ class OrdersController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
@@ -431,6 +435,7 @@ class OrdersController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
@@ -522,6 +527,7 @@ class OrdersController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'idempotency-key' => $idempotencyKey
         );
 
@@ -606,7 +612,8 @@ class OrdersController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
+            'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName
         );
 
         //set HTTP basic auth parameters
@@ -692,6 +699,7 @@ class OrdersController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
@@ -782,6 +790,7 @@ class OrdersController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'Content-Type'    => 'application/json',
             'idempotency-key' => $idempotencyKey
         );
@@ -867,7 +876,8 @@ class OrdersController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
+            'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName
         );
 
         //set HTTP basic auth parameters
