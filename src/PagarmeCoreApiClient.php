@@ -22,9 +22,9 @@ class PagarmeCoreApiClient
         $basicAuthPassword = null,
         $serviceRefererName = null
     ) {
-        Configuration::$serviceRefererName = $serviceRefererName ? $serviceRefererName : Configuration::$serviceRefererName;
         Configuration::$basicAuthUserName = $basicAuthUserName ? $basicAuthUserName : Configuration::$basicAuthUserName;
         Configuration::$basicAuthPassword = $basicAuthPassword ? $basicAuthPassword : Configuration::$basicAuthPassword;
+        Configuration::$serviceRefererName = $serviceRefererName ? $serviceRefererName : Configuration::$serviceRefererName;
     }
     /**
      * Singleton access to Subscriptions controller
