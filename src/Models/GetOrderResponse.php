@@ -142,6 +142,13 @@ class GetOrderResponse implements JsonSerializable
     public $closed;
 
     /**
+     * @todo Write general description for this property
+     * @required
+     * @var string $amount public property
+     */
+    public $amount;
+
+    /**
      * Constructor to set initial or default values of member properties
      * @param string               $id         Initialization value for $this->id
      * @param string               $code       Initialization value for $this->code
@@ -161,10 +168,11 @@ class GetOrderResponse implements JsonSerializable
      * @param GetLocationResponse  $location   Initialization value for $this->location
      * @param GetDeviceResponse    $device     Initialization value for $this->device
      * @param bool                 $closed     Initialization value for $this->closed
+     * @param amount               $amount     Initialization value for $this->amount
      */
     public function __construct()
     {
-        if (18 == func_num_args()) {
+        if (19 == func_num_args()) {
             $this->id         = func_get_arg(0);
             $this->code       = func_get_arg(1);
             $this->currency   = func_get_arg(2);
@@ -183,6 +191,7 @@ class GetOrderResponse implements JsonSerializable
             $this->location   = func_get_arg(15);
             $this->device     = func_get_arg(16);
             $this->closed     = func_get_arg(17);
+            $this->amount     = func_get_arg(18);
         }
     }
 
